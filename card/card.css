@@ -1,0 +1,164 @@
+.PageTitle {
+    margin-bottom: 0;
+}
+
+.OSQCardList {
+    position: relative;
+    width: 900px;
+    height: 450px;
+}
+
+.OSQCard {
+    position: absolute;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 2rem;
+    border: 1px solid rgba(0, 0, 0, 0.1);
+    border-radius: 15px;
+    cursor: pointer;
+}
+
+.OSQCard p {
+    z-index: -1;
+    text-align: center;
+}
+
+.type {
+    width: 900px;
+    margin: 1rem;
+}
+
+.moveButtonsDiv {
+    width: 900px;
+    margin: 1rem;
+    display: flex;
+    flex-direction: row-reverse;
+}
+
+.moveButtonsDiv button {
+    margin-left: 0.5rem;
+}
+
+.moveButton {
+    background-color: white;
+    border: none;
+    color: #999;
+    margin: 0;
+    margin-right: 0 0.25rem;
+    text-decoration: none;
+    font-weight: 900;
+    padding: 0.75rem;
+    border-radius: 50px;
+    transition: all 0.5s ease;
+}
+
+.moveButton:hover {
+    background-color: #f2f2f2;
+    color: black;
+    transition: all 0.5s ease;
+}
+
+.displayNone {
+    display: none;
+}
+
+.excluded {
+    display: none;
+}
+
+.AlreadyKnowCard {
+    width: 1000px;
+    display: flex;
+    justify-content: space-between;
+    padding: 1rem;
+    /* position: relative; */
+    transition: all 0.5s ease;
+    border-radius: 15px;
+    background-color: white;
+    border: 1px solid rgba(0, 0, 0, 0.1);
+    margin: 0.5rem 0;
+
+    position: relative;
+    overflow: hidden;
+}
+
+.AlreadyKnowCard:hover {
+    transition: all 0.5s ease;
+    /* transition: border 0.5s ease, box-shadow 0.5s ease, width 1s ease, */
+    /* transform 2.5s, top 2s; */
+    border: 1px solid #00c700;
+    -webkit-box-shadow: inset 0px 0px 0px 3px #00c700;
+    box-shadow: inset 0px 0px 0px 3px #00c700;
+}
+
+.AlreadyKnowCard p {
+    z-index: 2;
+    margin: 0;
+    height: fit-content;
+}
+
+.AlreadyKnowCardAnswer {
+    width: 600px;
+    /* height: fit-content; */
+    /* z-index: 2; */
+    /* transition: width 0.5s ease; */
+}
+
+.AlreadyKnowDiv {
+    /* position: fixed; */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    /* justify-content: center; */
+}
+
+.AlreadyKnowDivTitle {
+    margin-left: 1rem;
+}
+
+.AlreadyKnowCardQuestion {
+    width: 200px;
+    /* transition: width 0.5s ease; */
+}
+
+.betweenDiv {
+    display: flex;
+    align-items: center;
+}
+
+.returnImg {
+    /* width: 30px; */
+    /* height: 30px; */
+    border: none;
+    transition: filter 0.5s ease;
+    z-index: 1;
+}
+
+.returnButton {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 36px;
+    height: 36px;
+    /* right: 1rem; */
+    background-color: #f2f2f2;
+    border-radius: 30px;
+    border: none;
+    transition: background-color 0.5s ease;
+    /* width: 100%; */
+    position: relative;
+}
+
+.returnButton:hover {
+    background-color: #00c700;
+}
+
+.returnButton:hover .returnImg {
+    transition: filter 0.5s ease;
+    filter: brightness(0) invert(1);
+}

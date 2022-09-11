@@ -1,0 +1,114 @@
+.ContinueButtons {
+    display: flex;
+}
+
+.OSQCardList {
+}
+
+.OSQCard {
+    width: 900px;
+    height: 450px;
+    /* background-color: white; */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 2rem;
+    border-radius: 20px;
+    border: 1px solid rgba(0, 0, 0, 0.1);
+    /* transition: all 0.5s ease; */
+}
+
+.ContinueButtons button {
+    margin: 1rem;
+}
+
+.AnswerGrid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: repeat(2, 1fr);
+    width: 900px;
+    margin: 20px 0;
+    grid-column-gap: 20px;
+    grid-row-gap: 20px;
+}
+
+.Answer {
+    border: 1px solid rgba(0, 0, 0, 0.1);
+    box-sizing: border-box;
+    width: 440px;
+    padding: 25px;
+    border-radius: 15px;
+    cursor: pointer;
+    transition: all 0.5s ease;
+}
+
+.Answer:hover {
+    transition: all 0.5s ease;
+    border: 1px solid #0099ff;
+    -webkit-box-shadow: inset 0px 0px 0px 3px #0099ff;
+    box-shadow: inset 0px 0px 0px 3px #0099ff;
+}
+/* progress {
+    border-radius: 20px;
+    background: rgb(255, 255, 255);
+}
+
+progress::-moz-progress-bar {
+    background: lightcolor;
+}
+
+progress::-webkit-progress-value {
+    background: rgb(255, 136, 0);
+}
+
+progress::-webkit-progress-bar {
+    background: rgb(255, 255, 255);
+} */
+
+.MCScreen {
+    display: none;
+}
+
+.RightAnswer {
+    box-shadow: inset 0px 0px 0px 3px #00c700 !important;
+    border-color: #00c700 !important;
+    /* background-color: #f9fff5; */
+}
+
+.WrongAnswer {
+    box-shadow: inset 0px 0px 0px 3px #f00 !important;
+    border-color: #f00 !important;
+    /* background-color: #fffbf9; */
+}
+
+#A0 {
+    grid-area: 1 / 1 / 2 / 2;
+}
+#A1 {
+    grid-area: 1 / 2 / 2 / 3;
+}
+#A2 {
+    grid-area: 2 / 1 / 3 / 2;
+}
+#A3 {
+    grid-area: 2 / 2 / 3 / 3;
+}
+
+#progressBar {
+    width: 0px;
+    background-color: #ff7f00;
+    height: 12px;
+    border-radius: 15px;
+    transition: width 0.2s ease;
+}
+
+#progressBarOuter {
+    width: 900px;
+    height: 16px;
+    border-radius: 15px;
+    background-color: #ffcea6;
+    border: 2px solid #ff0000;
+
+    /* transition:; */
+    margin-bottom: 10px;
+}

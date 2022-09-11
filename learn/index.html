@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>OpenSourceQuizzlet</title>
+        <link rel="stylesheet" href="../style.css" />
+        <!-- <link rel="stylesheet" href="../add/add.css" /> -->
+        <link rel="stylesheet" href="learn.css" />
+        <link rel="icon" type="image/x-icon" href="/images/purpleFlower.ico" />
+    </head>
+    <body>
+        <div class="PageContent">
+            <nav class="GoToLinks">
+                <a href="/">OSQ</a>
+                <a href="/add">Add an OSQ</a>
+                <a href="/learn">Learn an OSQ</a>
+            </nav>
+            <h1 class="LearnTitle">Learn From your OSQ's</h1>
+            <div class="OSQList"></div>
+            <div class="blurDiv" onclick="exit()"></div>
+            <div class="modifyScreen">
+                <!-- <p>Add here an OSQ</p> -->
+                <div class="InputGroup">
+                    <p class="noMargin">Please insert your OSQ name</p>
+                    <input
+                        type="text"
+                        class="InputMargin OSQNameInput"
+                        placeholder="OSQ Name"
+                    />
+                </div>
+                <div class="InputGroup">
+                    <p class="noMargin">Please Insert your Separator</p>
+                    <input
+                        type="text"
+                        class="SeparatorInput InputMargin"
+                        placeholder="Separator ex: - "
+                    />
+                </div>
+
+                <textarea
+                    id="AddOSQArea"
+                    name="AddOSQArea"
+                    rows="20"
+                    cols="100"
+                    style="resize: none"
+                    placeholder="Please insert your questions and your answers here"
+                ></textarea>
+                <div class="buttonsDiv">
+                    <button onclick="submit()" class="submitButton">
+                        Submit OSQ
+                    </button>
+                    <button onclick="exit()" class="cancelButton">
+                        Cancel or Exit
+                    </button>
+                </div>
+            </div>
+        </div>
+    </body>
+    <script src="learn.js"></script>
+</html>

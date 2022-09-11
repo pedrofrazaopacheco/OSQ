@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>OpenSourceQuizzlet</title>
+        <link rel="stylesheet" href="../style.css" />
+        <link rel="stylesheet" href="add.css" />
+        <link rel="icon" type="image/x-icon" href="/images/purpleFlower.ico" />
+    </head>
+    <body>
+        <div class="PageContent">
+            <nav class="GoToLinks">
+                <a href="/">OSQ</a>
+                <a href="/add">Add an OSQ</a>
+                <a href="/learn">Learn an OSQ</a>
+            </nav>
+            <div class="AddTitle">
+                <h1>Add an OSQ</h1>
+                <h3>
+                    Attention! There cannot be 2 definitions with the same name
+                </h3>
+            </div>
+            <div class="nameExistsWarning">
+                Sorry! That name already exists in the localStorage!. Change the
+                name or navigate <a href="/learn">here</a> to modify it
+            </div>
+            <div class="InputMainGroup">
+                <div class="InputGroup">
+                    <p class="noMargin InputQP">OSQ name</p>
+                    <input
+                        type="text"
+                        class="InputQ OSQNameInput"
+                        placeholder="OSQ Name"
+                    />
+                </div>
+                <div class="InputGroup">
+                    <p class="noMargin InputQP">Separator</p>
+                    <input
+                        type="text"
+                        class="InputQ SeparatorInput"
+                        placeholder="Separator ex: - "
+                    />
+                </div>
+            </div>
+
+            <textarea
+                id="AddOSQArea"
+                name="AddOSQArea"
+                rows="20"
+                cols="100"
+                style="resize: none"
+                placeholder="Please insert your questions and your answers here"
+            ></textarea>
+            <button onclick="submit()" class="submitButton">Submit OSQ</button>
+        </div>
+    </body>
+    <script src="add.js"></script>
+</html>

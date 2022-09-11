@@ -1,0 +1,105 @@
+body {
+    /* background-color: aqua; */
+    height: 100vh;
+}
+
+.DragOn {
+    /*border-style: dashed;*/
+    border: 1px solid #00c700;
+    -webkit-box-shadow: inset 0px 0px 0px 3px #00c700;
+    box-shadow: inset 0px 0px 0px 3px #00c700;
+    /* cursor: pointer; */
+}
+
+.DragContentContainer {
+    width: 1000px;
+    display: flex;
+}
+
+.containerParQuestions {
+}
+
+.containerParAnswers {
+    overflow: auto;
+}
+
+.CheckAnswersButton {
+    margin: 1rem 0;
+}
+
+.Qrow {
+    display: flex;
+    flex-direction: column;
+    padding: 10px;
+
+    padding: 1rem;
+    transition: all 0.5s ease;
+    border-radius: 15px;
+    background-color: white;
+    border: 1px solid rgba(0, 0, 0, 0.1);
+    margin: 0.5rem 0;
+    width: 500px;
+}
+
+.Question {
+    /* width: 420px; */
+    /* margin-right: 40px; */
+}
+
+/* ::-webkit-scrollbar { */
+/* width: 0px; */
+/* background: transparent; make scrollbar transparent */
+/* } */
+
+.AnswerDropZone {
+    width: 100%;
+    margin-top: 1rem;
+}
+
+.box {
+    background-color: rgb(240, 240, 240);
+    min-height: 50px;
+    padding: 1rem;
+    transition: all 0.25s ease;
+    border-radius: 15px;
+    background-color: rgb(248, 248, 248);
+    border: 1px solid rgba(0, 0, 0, 0.1);
+}
+
+.containerParAnswersDivOver {
+    background-color: red;
+    transition: background-color 0.5s ease;
+    cursor: move;
+}
+
+.AnswerDiv {
+    padding: 1rem;
+    transition: all 0.5s ease;
+    border-radius: 15px;
+    background-color: white;
+    border: 1px solid rgba(0, 0, 0, 0.1);
+    margin: 10px;
+    width: 480px;
+}
+
+.AnswerDiv:hover {
+    transition: all 0.5s ease;
+    /* transition: border 0.5s ease, box-shadow 0.5s ease, width 1s ease, */
+    /* transform 2.5s, top 2s; */
+    border: 1px solid #00c700;
+    -webkit-box-shadow: inset 0px 0px 0px 3px #00c700;
+    box-shadow: inset 0px 0px 0px 3px #00c700;
+}
+
+.WrongAnswer {
+    transition: all 0.25 ease;
+    -webkit-box-shadow: inset 0px 0px 0px 4px #f00;
+    -moz-box-shadow: inset 0px 0px 0px 4px #f00;
+    box-shadow: inset 0px 0px 0px 4px #f00;
+}
+
+.AnswerAfterCheckDiv {
+    /* width: 450px; */
+    display: none;
+    margin-top: 1rem;
+}

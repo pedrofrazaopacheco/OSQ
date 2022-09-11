@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>OpenSourceQuizzlet</title>
+        <link rel="stylesheet" href="../style.css" />
+        <link rel="stylesheet" href="DragAndDrop.css" />
+        <link rel="icon" type="image/x-icon" href="/images/purpleFlower.ico" />
+    </head>
+    <body>
+        <div class="PageContent">
+            <nav class="GoToLinks">
+                <a href="/">OSQ</a>
+                <a href="/add">Add an OSQ</a>
+                <a href="/learn">Learn an OSQ</a>
+            </nav>
+            <h2 class="PressSpaceTitle" style="display: none">
+                Please press space to continue...
+            </h2>
+            <button
+                onclick="CheckAnswers()"
+                style="visibility: hidden"
+                class="CheckAnswersButton"
+            >
+                Check Answers
+            </button>
+            <div class="DragContentContainer">
+                <div class="containerParQuestions">
+                    <!-- <div class="Qrow"> -->
+                    <!-- <div class="Question"></div> -->
+                    <!-- <div class="box AnswerDropZone"></div> -->
+                    <!-- </div> -->
+                </div>
+                <div class="containerParAnswers">
+                    <!-- <div draggable="true" class="draggableEl AnswerDiv">A</div> -->
+                </div>
+            </div>
+            <div class="ContinueButtons">
+                <button onclick="resetAndContinue()">Reset & Continue</button>
+                <button onclick="ContinueAsIs()">Continue</button>
+            </div>
+        </div>
+    </body>
+    <script src="DragAndDrop.js"></script>
+</html>

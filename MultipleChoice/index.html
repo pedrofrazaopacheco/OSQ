@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>OpenSourceQuizzlet</title>
+        <link rel="stylesheet" href="../style.css" />
+        <link rel="stylesheet" href="MultipleChoice.css" />
+        <link rel="icon" type="image/x-icon" href="/images/purpleFlower.ico" />
+    </head>
+    <body>
+        <div class="PageContent">
+            <nav class="GoToLinks">
+                <a href="/">OSQ</a>
+                <a href="/add">Add an OSQ</a>
+                <a href="/learn">Learn an OSQ</a>
+            </nav>
+            <h1 class="PageTitle">Welcome to Multiple Choice!</h1>
+            <div class="MCScreen">
+                <div id="progressBarOuter"><div id="progressBar"></div></div>
+                <div class="OSQCard OSQCardQuestion">Q1</div>
+                <div class="AnswerGrid">
+                    <div
+                        class="Answer"
+                        id="A0"
+                        onclick="checkAnswer(event)"
+                        data-value="false"
+                    >
+                        A1
+                    </div>
+                    <div
+                        class="Answer"
+                        id="A1"
+                        onclick="checkAnswer(event)"
+                        data-value="false"
+                    >
+                        A2
+                    </div>
+                    <div
+                        class="Answer"
+                        id="A2"
+                        onclick="checkAnswer(event)"
+                        data-value="false"
+                    >
+                        A3
+                    </div>
+                    <div
+                        class="Answer"
+                        id="A3"
+                        onclick="checkAnswer(event)"
+                        data-value="false"
+                    >
+                        A4
+                    </div>
+                </div>
+            </div>
+            <!-- <button onclick="Reset()">Reset</button> -->
+
+            <div class="ContinueButtons">
+                <button onclick="resetAndContinue()">Reset & Continue</button>
+                <button onclick="ContinueAsIs()">Continue</button>
+            </div>
+        </div>
+    </body>
+    <script src="MultipleChoice.js"></script>
+</html>

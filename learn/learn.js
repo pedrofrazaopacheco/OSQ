@@ -1,0 +1,108 @@
+const OSQList = document.querySelector(".OSQList")
+let LearnURL
+
+// console.log(...localStorage);
+// const items = { ...localStorage };
+// console.log(items);
+// console.log(Object.keys({ ...localStorage }));
+
+Object.keys({ ...localStorage }).forEach((listItem) =>
+    OSQList.insertAdjacentHTML(
+        "beforeend",
+        `<div class="OSQItem" id="${listItem}">
+    <p class="listItemText">
+        ${listItem}
+    </p>
+    <div class="Functionbuttons">
+        <button onclick="modify('${listItem}')" class="modifyButton">Modify</button>
+        <button onclick="learnCards('${listItem}')" class="learnButton">Learn Cards</button>
+        <button onclick="MultipleChoice('${listItem}')" class="MultipleChoice">MultipleChoice</button>
+        <button onclick="DragAndDrop('${listItem}')" class="DragAndDropButton">DragAndDrop</button>
+        <button onclick="WriteEx('${listItem}')" class="WriteExButton">WriteEx</button>
+        <button onclick="remove('${listItem}')" class="deleteButton">delete</button>
+    </div>
+    </div>`
+    )
+)
+
+function modify(listItem) {
+    const modifyScreen = document.querySelector(".modifyScreen")
+    const textarea = document.querySelector("textarea")
+    const OSQName = document.querySelector(".OSQNameInput")
+    const Separator = document.querySelector(".SeparatorInput")
+
+    modifyScreen.style.display = "flex"
+    document.querySelector(".blurDiv").style.display = "block"
+
+    OSQName.value = listItem
+    const dataObj = JSON.parse(localStorage.getItem(listItem))
+
+    const separator = dataObj.separator
+    Separator.value = separator
+
+    let html = ""
+
+    dataObj.dataArray.forEach(
+        (element) => (html += element[0] + separator + element[1] + "\n")
+    )
+    html = html.slice(0, -1)
+    // console.log("%cLogging html" + html, "background: #222; color: #bada55");
+    textarea.value = html
+}
+
+function submit() {
+    const modifyScreen = document.querySelector(".modifyScreen")
+    const textarea = document.querySelector("textarea")
+    const OSQName = document.querySelector(".OSQNameInput")
+    const Separator = document.querySelector(".SeparatorInput")
+    const arrayOfLines = textarea.value.split("\n")
+    const SeparatorValue = Separator.value
+    const myObj = { dataArray: [], separator: SeparatorValue }
+
+    arrayOfLines.forEach((line) => {
+        line = line.split(SeparatorValue)
+        if (line[0] != "") {
+            myObj.dataArray.push([line[0], line[1], "D"])
+        }
+    })
+    const myJSON = JSON.stringify(myObj)
+    localStorage.setItem(OSQName.value, myJSON)
+
+    textarea.value = ""
+    OSQName.value = ""
+    Separator.value = ""
+    console.log("Submit: " + { ...localStorage })
+    modifyScreen.style.display = "none"
+    document.querySelector(".blurDiv").style.display = "none"
+}
+
+function exit() {
+    document.querySelector(".modifyScreen").style.display = "none"
+    document.querySelector(".blurDiv").style.display = "none"
+}
+
+function learnCards(listItem) {
+    // LearnURL = listItem;
+    // let url = `/card/?0=` + encodeURIComponent(LearnURL);
+    document.location.href = `/card/?continue=` + encodeURIComponent(listItem)
+}
+
+function MultipleChoice(listItem) {
+    document.location.href =
+        `/MultipleChoice/?continue=` + encodeURIComponent(listItem)
+}
+
+function remove(listItem) {
+    document.querySelector(`#${listItem}`).remove()
+    localStorage.removeItem(listItem)
+}
+
+function WriteEx(listItem) {
+    document.location.href =
+        `/writeEx/?continue=` + encodeURIComponent(listItem)
+}
+
+function DragAndDrop(listItem) {
+    document.location.href =
+        `/DragAndDrop/?continue=` + encodeURIComponent(listItem)
+}

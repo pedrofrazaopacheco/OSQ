@@ -1,0 +1,50 @@
+.QuestionsGroupDiv {
+    margin-bottom: 2rem;
+}
+
+.QuestionDiv {
+    flex-wrap: wrap;
+    width: 1000px;
+    padding: 10px;
+    display: flex;
+    border-top: 1px solid black;
+}
+
+.QuestionDiv:last-child {
+    border-bottom: 1px solid black;
+}
+
+.Question {
+    width: 450px;
+    margin-right: 40px;
+}
+
+.Answer {
+    width: 490px;
+    height: fit-content;
+}
+
+.CorrectAnswer {
+    /* inset 0px 0px 0px 4px #2ba100; */
+    -webkit-box-shadow: inset 0px 0px 0px 4px #2ba100;
+    -moz-box-shadow: inset 0px 0px 0px 4px #2ba100;
+    box-shadow: inset 0px 0px 0px 4px #2ba100;
+}
+
+.WrongAnswer {
+    -webkit-box-shadow: inset 0px 0px 0px 4px #f00;
+    -moz-box-shadow: inset 0px 0px 0px 4px #f00;
+    box-shadow: inset 0px 0px 0px 4px #f00;
+}
+
+.CorrectAnswerDiv {
+    width: 450px;
+}
+
+.ContinueButtons {
+    display: flex;
+}
+
+.ContinueButtons button {
+    margin: 1rem;
+}

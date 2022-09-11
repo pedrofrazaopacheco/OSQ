@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>OpenSourceQuizzlet</title>
+        <link rel="stylesheet" href="../style.css" />
+        <link rel="stylesheet" href="card.css" />
+        <link rel="icon" type="image/x-icon" href="/images/purpleFlower.ico" />
+    </head>
+    <body>
+        <div class="PageContent">
+            <nav class="GoToLinks">
+                <a href="/">OSQ</a>
+                <a href="/add">Add an OSQ</a>
+                <a href="/learn">Learn an OSQ</a>
+            </nav>
+            <h1 class="PageTitle">Welcome to Cards!</h1>
+            <h3 class="OSQName"></h3>
+            <!-- <h3 class="type">Type: Question</h3> -->
+            <div class="OSQCardList"></div>
+            <div class="moveButtonsDiv">
+                <button onclick="Next()" class="moveButton">Next --></button>
+                <button onclick="Previous()" class="moveButton">
+                    <-- Prev
+                </button>
+                <button onclick="AlreadyKnow()" class="moveButton">✅</button>
+                <button onclick="Reset()" class="moveButton">Reset</button>
+                <!-- <button onclick="currentCardFun()" class="moveButton"> -->
+                <!-- Current Card -->
+                <!-- </button> -->
+            </div>
+            <div class="AlreadyKnowDiv">
+                <h2 class="AlreadyKnowDivTitle">Already Know!</h2>
+            </div>
+        </div>
+    </body>
+    <script src="card.js"></script>
+</html>
