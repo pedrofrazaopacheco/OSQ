@@ -7,21 +7,29 @@
     width: 1000px;
     padding: 10px;
     display: flex;
-    border-top: 1px solid black;
-}
 
-.QuestionDiv:last-child {
-    border-bottom: 1px solid black;
+    background-color: white;
+    border: 1px solid rgba(0, 0, 0, 0.1);
+    margin: 10px 0;
+    border-radius: 10px;
 }
 
 .Question {
-    width: 450px;
+    width: 440px;
     margin-right: 40px;
 }
 
 .Answer {
+    transition: all 0.5s ease;
+    border-radius: 10px;
+    background-color: white;
+    border: 1px solid rgba(0, 0, 0, 0.1);
+    margin: 0.5rem 0;
+
+    padding: 10px;
+
     width: 490px;
-    height: fit-content;
+    height: 30px;
 }
 
 .CorrectAnswer {

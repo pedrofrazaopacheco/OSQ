@@ -23,10 +23,6 @@ body {
     overflow: auto;
 }
 
-.CheckAnswersButton {
-    margin: 1rem 0;
-}
-
 .Qrow {
     display: flex;
     flex-direction: column;
@@ -102,4 +98,58 @@ body {
     /* width: 450px; */
     display: none;
     margin-top: 1rem;
+}
+
+.CheckAnswersButton {
+    display: flex;
+    align-items: center;
+    font-size: 1rem;
+    font-weight: bold;
+
+    margin-top: 20px;
+    margin-bottom: 10px;
+
+    padding: 0.5rem 1rem;
+    background-color: hsla(0, 0%, 100%, 0.8);
+    border: 1px solid rgba(0, 0, 0, 0.1);
+    border-radius: 50px;
+    transition: all 0.5s ease;
+}
+
+.CheckAnswersButton:hover {
+    transition: all 0.5s ease;
+    box-shadow: inset 0px 0px 0px 3px #00c700 !important;
+    border-color: #00c700 !important;
+}
+
+.returnImg {
+    /* width: 30px; */
+    /* height: 30px; */
+    border: none;
+    transition: filter 0.5s ease;
+    z-index: 1;
+}
+
+.returnButton {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 36px;
+    height: 36px;
+    margin-left: 15px;
+    /* right: 1rem; */
+    background-color: #f2f2f2;
+    border-radius: 30px;
+    border: none;
+    transition: background-color 0.5s ease;
+    /* width: 100%; */
+    position: relative;
+}
+
+.CheckAnswersButton:hover .returnButton {
+    background-color: #00c700;
+}
+.CheckAnswersButton:hover .returnImg {
+    transition: filter 0.5s ease;
+    filter: brightness(0) invert(1);
 }
