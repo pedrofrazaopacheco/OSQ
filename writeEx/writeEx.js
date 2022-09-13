@@ -20,7 +20,6 @@ function ContinueAsIs() {
 if (ContinueFlag == "continue") ContinueAsIs()
 
 function init() {
-    document.querySelector(".checkAnswersButton").style.display = "block"
     document.querySelector(".ContinueButtons").style.display = "none"
 
     for (let i = 0; i < OSQObj.dataArray.length; i++) {
@@ -73,12 +72,14 @@ function init() {
 }
 
 function resetPage() {
+    // document.location.reload(true)
+
     document.location.href = `/writeEx/?continue=` + encodeURIComponent(OSQName)
 }
 
 function LetUserCheckAnswers() {
-    document.querySelector(".PressSpaceTitle").style.visibility = "visible"
-    document.querySelector(".checkAnswersButton").remove()
+    document.querySelector(".PressSpaceTitle").style.display = "block"
+    document.querySelector(".CheckAnswersButton").remove()
     document.addEventListener("keyup", (event) => {
         if (event.code == "Space") {
             localStorage.setItem(OSQName, JSON.stringify(OSQObj))
@@ -87,7 +88,7 @@ function LetUserCheckAnswers() {
     })
 }
 
-function checkAnswers() {
+function CheckAnswers() {
     childrenArray = Array.from(QuestionsGroupDiv.children)
     childrenArray.forEach((element) => {
         dataID = element.dataset.id
@@ -95,7 +96,7 @@ function checkAnswers() {
             // element.classList.add("CorrectAnswer")
             OSQObj.dataArray[dataID][2] = "A"
         } else {
-            element.children[2].textContent = `Correct Answer: ${OSQObj.dataArray[dataID][1]}`
+            element.children[2].innerHTML = `<span class="CorrectAnswerText">Correct Answer:</span> ${OSQObj.dataArray[dataID][1]}`
             element.classList.add("WrongAnswer")
         }
     })

@@ -16,7 +16,16 @@
                 <a href="/add">Add an OSQ</a>
                 <a href="/learn">Learn an OSQ</a>
             </nav>
-            <h1 class="PressSpaceTitle" style="visibility: hidden">
+            <button
+                onclick="CheckAnswers()"
+                class="CheckAnswersButton checkAnswersButton"
+            >
+                Check Answers
+                <div class="returnButton">
+                    <img src="/images/arrow.svg" class="returnImg" />
+                </div>
+            </button>
+            <h1 class="PressSpaceTitle" style="display: none">
                 Please press space to continue...
             </h1>
             <div class="ContinueButtons">
@@ -24,14 +33,6 @@
                 <button onclick="ContinueAsIs()">Continue</button>
             </div>
             <div class="QuestionsGroupDiv"></div>
-            <button
-                onclick="checkAnswers()"
-                class="checkAnswersButton"
-                style="display: none"
-            >
-                Check Answers
-                <img src="/images/arrow.svg" class="returnImg" />
-            </button>
         </div>
     </body>
     <script src="writeEx.js"></script>

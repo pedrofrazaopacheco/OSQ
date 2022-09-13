@@ -108,6 +108,7 @@ progress::-webkit-progress-bar {
     border-radius: 15px;
     background-color: #ffcea6;
     border: 2px solid #ff0000;
+    /* border: 2px solid red; */
 
     /* transition:; */
     margin-bottom: 10px;

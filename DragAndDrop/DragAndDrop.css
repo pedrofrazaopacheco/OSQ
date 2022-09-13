@@ -20,7 +20,13 @@ body {
 }
 
 .containerParAnswers {
-    overflow: auto;
+    border-radius: 15px;
+    padding: 10px;
+    padding-top: 0;
+    margin-left: 10px;
+    transition: background-color 0.5s ease;
+
+    /* overflow: auto; */
 }
 
 .Qrow {
@@ -33,13 +39,14 @@ body {
     border-radius: 15px;
     background-color: white;
     border: 1px solid rgba(0, 0, 0, 0.1);
-    margin: 0.5rem 0;
+    margin: 10px 0;
     width: 500px;
 }
 
 .Question {
     /* width: 420px; */
     /* margin-right: 40px; */
+    margin-bottom: 1rem;
 }
 
 /* ::-webkit-scrollbar { */
@@ -49,11 +56,10 @@ body {
 
 .AnswerDropZone {
     width: 100%;
-    margin-top: 1rem;
+    /* margin: 1rem 0; */
 }
 
 .box {
-    background-color: rgb(240, 240, 240);
     min-height: 50px;
     padding: 1rem;
     transition: all 0.25s ease;
@@ -63,7 +69,9 @@ body {
 }
 
 .containerParAnswersDivOver {
-    background-color: red;
+    /* background-color: red; */
+    background-color: blue;
+    background-color: rgb(248, 248, 248);
     transition: background-color 0.5s ease;
     cursor: move;
 }
@@ -74,10 +82,11 @@ body {
     border-radius: 15px;
     background-color: white;
     border: 1px solid rgba(0, 0, 0, 0.1);
-    margin: 10px;
-    width: 480px;
+    margin: 10px 0;
+    width: 470px;
 }
 
+/* .AnswerDropZone:hover, */
 .AnswerDiv:hover {
     transition: all 0.5s ease;
     /* transition: border 0.5s ease, box-shadow 0.5s ease, width 1s ease, */
@@ -96,8 +105,11 @@ body {
 
 .AnswerAfterCheckDiv {
     /* width: 450px; */
+    line-height: 25px;
+
     display: none;
     margin-top: 1rem;
+    /* margin-top: 1rem; */
 }
 
 .CheckAnswersButton {
@@ -110,7 +122,8 @@ body {
     margin-bottom: 10px;
 
     padding: 0.5rem 1rem;
-    background-color: hsla(0, 0%, 100%, 0.8);
+    /* background-color: hsla(0, 0%, 100%, 0.8); */
+    background-color: white;
     border: 1px solid rgba(0, 0, 0, 0.1);
     border-radius: 50px;
     transition: all 0.5s ease;
@@ -130,13 +143,21 @@ body {
     z-index: 1;
 }
 
+.CheckAnswersButton:hover .returnButton {
+    background-color: #00c700;
+}
+.CheckAnswersButton:hover .returnImg {
+    transition: filter 0.5s ease;
+    filter: brightness(0) invert(1);
+}
+
 .returnButton {
     display: flex;
     align-items: center;
     justify-content: center;
     width: 36px;
     height: 36px;
-    margin-left: 15px;
+    margin-left: 10px;
     /* right: 1rem; */
     background-color: #f2f2f2;
     border-radius: 30px;
@@ -146,10 +167,10 @@ body {
     position: relative;
 }
 
-.CheckAnswersButton:hover .returnButton {
-    background-color: #00c700;
-}
-.CheckAnswersButton:hover .returnImg {
-    transition: filter 0.5s ease;
-    filter: brightness(0) invert(1);
+.CorrectAnswerText {
+    background-color: #ecfccb;
+    color: #2ba100;
+    padding: 0.2rem;
+    border: 1px solid #2ba100;
+    border-radius: 4px;
 }

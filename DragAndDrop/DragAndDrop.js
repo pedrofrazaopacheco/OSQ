@@ -221,8 +221,9 @@ function CheckAnswers() {
         } else {
             element.classList.add("WrongAnswer")
             element.children[2].style.display = "block"
-            element.children[2].textContent =
-                "Correct Answer: " + OSQObj.dataArray[element.dataset.id][1]
+            element.children[2].innerHTML = `<span class="CorrectAnswerText">Correct Answer:</span>  ${
+                OSQObj.dataArray[element.dataset.id][1]
+            }`
         }
     })
     localStorage.setItem(OSQName, JSON.stringify(OSQObj))

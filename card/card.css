@@ -22,7 +22,10 @@
     border-radius: 15px;
     cursor: pointer;
     padding: 1rem;
-    box-shadow: 0 10px 10px -10px rgba(0, 0, 0, 0.048);
+}
+
+.OSQCard:last-child {
+    box-shadow: 0 10px 10px -5px rgba(0, 0, 0, 0.1);
 }
 
 .OSQCard p {
