@@ -16,6 +16,7 @@ Object.keys({ ...localStorage }).forEach((listItem) =>
     <div class="Functionbuttons">
         <button onclick="modify('${listItem}')" class="modifyButton">Modify</button>
         <button onclick="learnCards('${listItem}')" class="learnButton">Learn Cards</button>
+        <button onclick="DropDown('${listItem}')" class="DropDownButton">DropDowm</button>
         <button onclick="MultipleChoice('${listItem}')" class="MultipleChoice">MultipleChoice</button>
         <button onclick="DragAndDrop('${listItem}')" class="DragAndDropButton">DragAndDrop</button>
         <button onclick="WriteEx('${listItem}')" class="WriteExButton">WriteEx</button>
@@ -105,4 +106,9 @@ function WriteEx(listItem) {
 function DragAndDrop(listItem) {
     document.location.href =
         `/DragAndDrop/?continue=` + encodeURIComponent(listItem)
+}
+
+function DropDown(listItem) {
+    document.location.href =
+        `/DropDown/?continue=` + encodeURIComponent(listItem)
 }

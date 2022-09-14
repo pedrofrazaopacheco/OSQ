@@ -10,6 +10,7 @@ const OSQCard = document.querySelector(".OSQCard")
 const AnswerDivsList = document.querySelectorAll(".Answer")
 const QuestionDiv = document.querySelector(".OSQCardQuestion")
 const ProgressBar = document.querySelector("#progressBar")
+let correctAnswerText
 
 let count = 0,
     Question,
@@ -30,7 +31,7 @@ function randomIntFromInterval(min, max) {
 }
 
 function updateProgressBar() {
-    console.log(progressBar.offsetWidth)
+    // console.log(progressBar.offsetWidth)
 
     progressBar.style.width =
         (progressBar.offsetWidth * 100) / 900 + PBinterval + "%"
@@ -69,19 +70,22 @@ let temporaryAnswerBank = []
 function fillAnswersDivs(answersArray, correctAnswerIndex) {
     for (let i = 0; i < 4; i++) {
         if (i == correctAnswerIndex) {
-            AnswerDivsList[i].dataset.value = "true"
+            // AnswerDivsList[i].dataset.value = "true"
             AnswerDivsList[i].textContent = answersArray[i]
+            correctAnswerText = answersArray[i]
         } else {
-            AnswerDivsList[i].dataset.value = "false"
+            // AnswerDivsList[i].dataset.value = "false"
             AnswerDivsList[i].textContent = answersArray[i]
         }
     }
 }
 
 function checkAnswer(event) {
-    let answer = event.target.dataset.value
+    let answer = event.target.textContent == correctAnswerText
 
-    if (answer == "true") {
+    // console.log(event.target.textContent == correctAnswerText)
+
+    if (answer == true) {
         OSQCard.classList.add("RightAnswer")
         // OSQCard.style.boxShadow = "inset 0px 0px 0px 3px #00c700"
         // OSQCard.style.borderColor = "#00c700"
@@ -92,12 +96,13 @@ function checkAnswer(event) {
     }
 
     document.querySelectorAll(".Answer").forEach((element) => {
-        if (element.dataset.value == "true") {
+        if (element.textContent == correctAnswerText) {
             element.classList.add("RightAnswer")
         } else {
             element.classList.add("WrongAnswer")
         }
     })
+
     setTimeout(() => {
         document.querySelectorAll(".Answer").forEach((element) => {
             element.classList.remove("RightAnswer")
@@ -106,7 +111,7 @@ function checkAnswer(event) {
         OSQCard.classList.remove("RightAnswer")
         OSQCard.classList.remove("WrongAnswer")
         setTimeout(() => {
-            if (answer == "true") {
+            if (answer == true) {
                 correctAnswerFun()
             } else {
                 wrongAnswerFun()
