@@ -79,7 +79,7 @@
 }
 
 .returnImg2 {
-    filter: brightness(0) invert(1);
+    /* filter: brightness(0) invert(1); */
     transform: rotate(135deg);
 }
 
@@ -178,7 +178,8 @@
     background-color: #00c700;
 }
 
-.returnButton:hover .returnImg {
+.returnButton:hover .returnImg,
+.AlreadyKnowButton:hover .returnImg2 {
     transition: filter 0.5s ease;
     filter: brightness(0) invert(1);
 }

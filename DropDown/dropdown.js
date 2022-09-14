@@ -1,12 +1,7 @@
-// function GetValue() {
-//     var e = document.getElementById("cars")
-//     var value = e.value
-//     console.log(e.selectedIndex)
-//     var text = e.options[e.selectedIndex].text
+// Press Space to Continue
+// Disable all hovers and clicks
+// Add - Correct Answer:
 
-//     console.log(value)
-//     console.log(text)
-// }
 const url = decodeURIComponent(document.location.href.split("?")[1])
 const [ContinueFlag, OSQName] = url.split("=")
 const QuestionsGroupDiv = document.querySelector(".QuestionsGroupDiv")
@@ -56,8 +51,8 @@ for (let i = 0; i < dataArrayClone.length; i++) {
         QuestionsGroupDiv.insertAdjacentHTML(
             "beforeend",
             `
-        <div class="QuestionDiv">
-        <div class="Question" data-id="${i}">${dataArrayClone[i][0]}</div>
+        <div class="QuestionDiv" data-id="${i}">
+        <div class="Question" >${dataArrayClone[i][0]}</div>
         <div
         class="AnswerDiv"
         onclick="ToogleQuestionDiv(this, event)"
@@ -95,4 +90,23 @@ function ToogleQuestionDiv(div, event) {
     if (Array.from(event.target.classList).includes("AnswerOption")) {
         div.querySelector(".Answer").textContent = event.target.textContent
     }
+}
+
+function CheckAnswers() {
+    let checkAnswersList = document.querySelectorAll(".QuestionDiv")
+    let checkedQuestion, checkedAnswer, checkedDataId
+
+    checkAnswersList.forEach((div) => {
+        checkedDataId = div.dataset.id
+
+        // checkedQuestion = div.querySelector(".Question").textContent
+        checkedAnswer = div.querySelector(".Answer").textContent
+        console.log(dataArrayClone[checkedDataId][1])
+        console.log(checkedAnswer)
+        console.log(div)
+
+        if (dataArrayClone[checkedDataId][1] != checkedAnswer) {
+            div.classList.add("WrongAnswer")
+        }
+    })
 }
