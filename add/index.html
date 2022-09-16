@@ -11,11 +11,6 @@
     </head>
     <body>
         <div class="PageContent">
-            <nav class="GoToLinks">
-                <a href="/">OSQ</a>
-                <a href="/add">Add an OSQ</a>
-                <a href="/learn">Learn an OSQ</a>
-            </nav>
             <div class="AddTitle">
                 <h1>Add an OSQ</h1>
                 <h3>
@@ -51,10 +46,11 @@
                 rows="20"
                 cols="100"
                 style="resize: none"
-                placeholder="Please insert your questions and your answers here"
+                placeholder="Term - Definition, separator = ' - '"
             ></textarea>
             <button onclick="submit()" class="submitButton">Submit OSQ</button>
         </div>
     </body>
     <script src="/add/add.js"></script>
+    <script src="/nav/nav.js" defer></script>
 </html>

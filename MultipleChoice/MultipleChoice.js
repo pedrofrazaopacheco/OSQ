@@ -23,7 +23,8 @@ let count = 0,
     dataArrayCloneLength,
     supposedDataArrayCloneLength = 0,
     PBinterval = 0,
-    rndInt
+    rndInt,
+    ProgressBarWidthPercentage
 
 function randomIntFromInterval(min, max) {
     // min and max included
@@ -32,9 +33,10 @@ function randomIntFromInterval(min, max) {
 
 function updateProgressBar() {
     // console.log(progressBar.offsetWidth)
-
-    progressBar.style.width =
-        (progressBar.offsetWidth * 100) / 900 + PBinterval + "%"
+    ProgressBarWidthPercentage =
+        (progressBar.offsetWidth * 100) / 900 + PBinterval
+    if (ProgressBarWidthPercentage > 100) ProgressBarWidthPercentage = 100
+    progressBar.style.width = ProgressBarWidthPercentage + "%"
 }
 
 function init() {

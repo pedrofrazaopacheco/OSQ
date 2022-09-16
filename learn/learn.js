@@ -18,7 +18,7 @@ Object.keys({ ...localStorage }).forEach((listItem) =>
         <button onclick="learnCards('${listItem}')" class="learnButton">Learn Cards</button>
         <button onclick="DropDown('${listItem}')" class="DropDownButton">DropDown</button>
         <button onclick="MultipleChoice('${listItem}')" class="MultipleChoice">MultipleChoice</button>
-        <button onclick="DragAndDrop('${listItem}')" class="DragAndDropButton">DragAndDrop</button>
+        <button onclick="DragAndDrop('${listItem}')" class="DragAndDropButton">Drag & Drop</button>
         <button onclick="WriteEx('${listItem}')" class="WriteExButton">WriteEx</button>
         <button onclick="remove('${listItem}')" class="deleteButton">delete</button>
     </div>

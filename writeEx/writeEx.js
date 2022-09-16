@@ -96,7 +96,8 @@ function CheckAnswers() {
             // element.classList.add("CorrectAnswer")
             OSQObj.dataArray[dataID][2] = "A"
         } else {
-            element.children[2].innerHTML = `<span class="CorrectAnswerText">Correct Answer:</span> ${OSQObj.dataArray[dataID][1]}`
+            element.children[2].textContent = `Correct Answer: ${OSQObj.dataArray[dataID][1]}`
+            element.children[2].style.display = "block"
             element.classList.add("WrongAnswer")
         }
     })

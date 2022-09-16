@@ -58,10 +58,10 @@ function FillPageContent() {
     }
     for (let i = answersList.length - 1; i >= 0; i--) {
         let randomNumber = randomIntFromInterval(0, i)
-        console.log(randomNumber)
-        console.log(answersList)
-        console.log(answersList[randomNumber])
-        console.log("")
+        // console.log(randomNumber)
+        // console.log(answersList)
+        // console.log(answersList[randomNumber])
+        // console.log("")
         containerParAnswersDiv.insertAdjacentHTML(
             "beforeend",
             answersList[randomNumber]
@@ -84,7 +84,7 @@ function AddOpacityFunctionToDraggableElements() {
 }
 
 function AddOpacityFunctionSingleElement(element) {
-    console.log(element)
+    // console.log(element)
     element.addEventListener("dragstart", (event) => {
         element.style.opacity = "0.4"
         draggedEl = element
@@ -211,8 +211,8 @@ function CheckAnswers() {
         containerParQuestionsDiv.children
     )
     ArraycontainerParQuestionsDiv.forEach((element) => {
-        console.log(OSQObj.dataArray[element.dataset.id])
-        console.log(element.children[1].textContent)
+        // console.log(OSQObj.dataArray[element.dataset.id])
+        // console.log(element.children[1].textContent)
         if (
             OSQObj.dataArray[element.dataset.id][1] ==
             element.children[1].textContent
@@ -221,12 +221,15 @@ function CheckAnswers() {
         } else {
             element.classList.add("WrongAnswer")
             element.children[2].style.display = "block"
-            element.children[2].innerHTML = `<span class="CorrectAnswerText">Correct Answer:</span>  ${
+            // element.children[2].innerHTML = `<span class="CorrectAnswerText">Correct Answer:</span>  ${
+            //     OSQObj.dataArray[element.dataset.id][1]
+            // }`
+            element.children[2].textContent = `Correct Answer: ${
                 OSQObj.dataArray[element.dataset.id][1]
             }`
         }
     })
     localStorage.setItem(OSQName, JSON.stringify(OSQObj))
     LetUserCheckAnswers()
-    console.log(OSQObj)
+    // console.log(OSQObj)
 }

@@ -1,7 +1,3 @@
-// Press Space to Continue
-// Disable all hovers and clicks
-// Add - Correct Answer:
-
 const url = decodeURIComponent(document.location.href.split("?")[1])
 const [ContinueFlag, OSQName] = url.split("=")
 const QuestionsGroupDiv = document.querySelector(".QuestionsGroupDiv")
@@ -26,12 +22,13 @@ function randomIntFromInterval(min, max) {
 for (let i = 0; i < dataArrayCloneFiltered.length; i++) {
     answersArray[i] = dataArrayCloneFiltered[i][1]
 }
-// console.log(answersArray)
 
 for (let i = 0; i < dataArrayClone.length; i++) {
     The4AnswersArray = []
     currentAnswer = dataArrayClone[i][1]
     temporaryAnswersArray = answersArray.slice()
+    if (temporaryAnswersArray.length <= 3)
+        temporaryAnswersArray = OSQObj.dataArray.map((el) => el[1])
     currentAnswerIndex = temporaryAnswersArray.indexOf(currentAnswer)
     temporaryAnswersArray.splice(currentAnswerIndex, 1)
 
@@ -52,6 +49,7 @@ for (let i = 0; i < dataArrayClone.length; i++) {
             "beforeend",
             `
         <div class="QuestionDiv" data-id="${i}">
+        <div class="QuestionInnerDiv">
         <div class="Question" >${dataArrayClone[i][0]}</div>
         <div
         class="AnswerDiv"
@@ -61,16 +59,17 @@ for (let i = 0; i < dataArrayClone.length; i++) {
         <div class="Answer">Choose an option ...</div>
         <img
         src="/images/DropDownArrow.svg"
-                class="DropDownImage"
-                alt=""
-                />
-                </div>
-                <div class="AnswerOption">${The4AnswersArray[0]}</div>
-                <div class="AnswerOption">${The4AnswersArray[1]}</div>
-                <div class="AnswerOption">${The4AnswersArray[2]}</div>
-                <div class="AnswerOption">${The4AnswersArray[3]}</div>
-                </div>
-                </div>
+        class="DropDownImage"
+        alt=""
+        />
+        </div>
+        <div class="AnswerOption">${The4AnswersArray[0]}</div>
+        <div class="AnswerOption">${The4AnswersArray[1]}</div>
+        <div class="AnswerOption">${The4AnswersArray[2]}</div>
+        <div class="AnswerOption">${The4AnswersArray[3]}</div>
+        </div>
+        </div>
+        </div>
                 `
         )
     }
@@ -92,21 +91,47 @@ function ToogleQuestionDiv(div, event) {
     }
 }
 
+function resetPage() {
+    // document.location.reload()
+    // location.reload()
+
+    document.location.href =
+        `/DropDown/?continue=` + encodeURIComponent(OSQName)
+}
+
+function LetUserCheckAnswers() {
+    document.querySelector(".PressSpaceTitle").style.display = "block"
+    document.querySelector(".CheckAnswersButton").remove()
+    document.addEventListener("keyup", (event) => {
+        if (event.code == "Space") {
+            // localStorage.setItem(OSQName, JSON.stringify(OSQObj))
+            resetPage()
+        }
+    })
+}
+
 function CheckAnswers() {
     let checkAnswersList = document.querySelectorAll(".QuestionDiv")
-    let checkedQuestion, checkedAnswer, checkedDataId
+    let checkedAnswer, checkedDataId
 
     checkAnswersList.forEach((div) => {
         checkedDataId = div.dataset.id
 
         // checkedQuestion = div.querySelector(".Question").textContent
         checkedAnswer = div.querySelector(".Answer").textContent
-        console.log(dataArrayClone[checkedDataId][1])
-        console.log(checkedAnswer)
-        console.log(div)
-
         if (dataArrayClone[checkedDataId][1] != checkedAnswer) {
             div.classList.add("WrongAnswer")
+            div.insertAdjacentHTML(
+                "beforeend",
+                `
+            <div class="CorrectAnswerDiv">Correct Answer: ${dataArrayClone[checkedDataId][1]}</div>
+            `
+            )
+            div.querySelector(".CorrectAnswerDiv").style.display = "block"
+        } else {
+            OSQObj.dataArray[checkedDataId][2] = "A"
         }
     })
+    localStorage.setItem(OSQName, JSON.stringify(OSQObj))
+    LetUserCheckAnswers()
 }

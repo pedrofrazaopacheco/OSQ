@@ -6,8 +6,9 @@
     width: 1000px;
     padding: 10px;
     display: flex;
+    flex-direction: column;
     /* align-items: center; */
-    justify-content: space-between;
+    /* justify-content: space-between; */
 
     background-color: white;
     border: 1px solid rgba(0, 0, 0, 0.1);
@@ -161,4 +162,18 @@
     -moz-box-shadow: inset 0px 0px 0px 4px #f00;
     box-shadow: inset 0px 0px 0px 4px #f00;
     transition: all 0.5s ease;
+}
+.CorrectAnswerDiv {
+    line-height: 25px;
+    display: none;
+    margin-top: 1rem;
+    width: 100%;
+    border-radius: 10px;
+    padding: 0.5rem;
+    border: 4px solid #17c700;
+}
+
+.QuestionInnerDiv {
+    display: flex;
+    justify-content: space-between;
 }
