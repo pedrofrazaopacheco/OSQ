@@ -8,7 +8,6 @@
 .OSQCard {
     width: 900px;
     height: 450px;
-    /* background-color: white; */
     display: flex;
     justify-content: center;
     align-items: center;
@@ -16,8 +15,6 @@
     border-radius: 20px;
     border: 1px solid var(--BorderColor);
     text-align: center;
-    /* padding: 2rem; */
-    /* transition: all 0.5s ease; */
 }
 
 .ContinueButtons button {
@@ -58,13 +55,11 @@
 .RightAnswer {
     box-shadow: inset 0px 0px 0px 3px #00c700 !important;
     border-color: #00c700 !important;
-    /* background-color: #f9fff5; */
 }
 
 .WrongAnswer {
     box-shadow: inset 0px 0px 0px 3px #f00 !important;
     border-color: #f00 !important;
-    /* background-color: #fffbf9; */
 }
 
 #A0 {
@@ -94,8 +89,5 @@
     border-radius: 15px;
     background-color: #ffcea6;
     border: 2px solid #ff0000;
-    /* border: 2px solid red; */
-
-    /* transition:; */
     margin-bottom: 10px;
 }

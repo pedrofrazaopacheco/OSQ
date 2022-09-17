@@ -13,20 +13,14 @@ let currentCard = 0
 
 document.querySelector(".OSQName").textContent = `OSQ Name: ${OSQName}`
 
-// Retrieving data:
-// let text = localStorage.getItem(OSQName);
-// let obj = JSON.parse(text);
-// document.getElementById("demo").innerHTML = obj.name;
-
-// const myObj = { dataArray: [], separator: SeparatorValue };
-// const myJSON = JSON.stringify(myObj);
-// localStorage.setItem(OSQName.value, myJSON);
-
 OSQObj.dataArray.forEach((element) => {
     if (element[2] == "D") {
         OSQCardList.insertAdjacentHTML(
             "beforeend",
-            `<div class="OSQCard" style="z-index: ${zIndexCounter};" data-id=${dataIDCounter} onclick="toggleText(event)"><p class="Question">${element[0]}</p><p class="Answer">${element[1]}</p></div>`
+            `<div class="OSQCard" style="z-index: ${zIndexCounter};" data-id=${dataIDCounter} onclick="toggleText(event)">
+                <div class="Question front card">${element[0]}</div>
+                <div class="Answer back card">${element[1]}</div>
+            </div>`
         )
     } else if (element[2] == "A") {
         AlreadyKnowDiv.insertAdjacentHTML(
@@ -48,25 +42,30 @@ OSQObj.dataArray.forEach((element) => {
 dataIDCounter = OSQCardList.children[0].dataset.id
 let dataArrayLength = OSQCardList.children.length
 
-document
-    .querySelectorAll(".Answer")
-    .forEach((element) => element.classList.add("displayNone"))
+// document
+// .querySelectorAll(".Answer")
+// .forEach((element) => element.classList.add("displayNone"))
 
 function toggleText(event) {
-    event.target.querySelector(".Question").classList.toggle("displayNone")
-    event.target.querySelector(".Answer").classList.toggle("displayNone")
+    event.target.parentElement.classList.toggle("OSQCardRotated")
+    // event.target.querySelector(".Question").classList.toggle("displayNone")
+    // event.target.querySelector(".Answer").classList.toggle("displayNone")
 }
 
 function Next() {
     if (currentCard == dataArrayLength - 1) return 0
     OSQCardList.children[currentCard].classList.add("displayNone")
+    OSQCardList.children[currentCard].classList.remove("SelectedOSQCard")
     currentCard++
     dataIDCounter = OSQCardList.children[currentCard].dataset.id
+    OSQCardList.children[currentCard].classList.add("SelectedOSQCard")
 }
 function Previous() {
     if (currentCard == 0) return 0
+    OSQCardList.children[currentCard].classList.remove("SelectedOSQCard")
     currentCard--
     OSQCardList.children[currentCard].classList.remove("displayNone")
+    OSQCardList.children[currentCard].classList.add("SelectedOSQCard")
     dataIDCounter = OSQCardList.children[currentCard].dataset.id
 }
 
@@ -99,9 +98,7 @@ function loopSlide(loopNumber) {
 loopSlide(SlideNumber)
 
 function toggleTextOnSpace(element) {
-    // console.log(element);
-    element.querySelector(".Question").classList.toggle("displayNone")
-    element.querySelector(".Answer").classList.toggle("displayNone")
+    element.classList.toggle("OSQCardRotated")
 }
 
 document.addEventListener("keyup", (event) => {
@@ -116,4 +113,8 @@ function Reset() {
     localStorage.setItem(OSQName, JSON.stringify(OSQObj))
     document.location.reload(true)
     // document.location.href = `/card/?0=` + encodeURIComponent(OSQName)
+}
+
+if (OSQCardList.children[0]) {
+    OSQCardList.children[0].classList.add("SelectedOSQCard")
 }

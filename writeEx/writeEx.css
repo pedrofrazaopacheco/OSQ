@@ -12,8 +12,6 @@
     margin: 10px 0;
     border-radius: 15px;
     padding: 1rem;
-
-    /* transition: height 0.5s ease; */
 }
 
 .PressSpaceTitle {
@@ -45,7 +43,6 @@
 }
 
 .CorrectAnswer {
-    /* inset 0px 0px 0px 4px var(--GrabGreen); */
     -webkit-box-shadow: inset 0px 0px 0px 4px var(--GrabGreen);
     -moz-box-shadow: inset 0px 0px 0px 4px var(--GrabGreen);
     box-shadow: inset 0px 0px 0px 4px var(--GrabGreen);
