@@ -1,2 +1,42 @@
 True Or False Questions
-Matching Questions
+
+
+OSQ Home Page
+Welcome to the Next Open Source Way of Learning
+OSQ is the perfect tool to help you grasp those hard concepts trhough gamification
+
+Cards are your study's best guards!
+Rotate, Select, Advance and Show that you already know the Dance
+
+DropDown
+continues to be around
+The sibling of multiple choice continues to be the best method for a quick introduction to your sudy set.
+
+Multiple Choice
+the OSQ's Rolls-Royce
+Our most polished method is here to keep you entretained all throughout your study session
+
+Drag & Drop
+
+
+
+Read, Select, Revise, and Check Your Answers for the first study row 
+
+========================================
+GOALS
+
+1. Fix Homepage
+2. Fix Add an OSQ
+3. Make Groups
+4. Add a DropDown Option To Groups
+5. Choose a Color for a set
+6. Fix Modify Screen
+7. Make True Or False Game
+8. Fix Confirm Delete Screen
+9. Make Consistent design across Style
+10. Push the Title To The Left
+11. Experiment New NavBar
+12. Make Card Animation
+13. Toggle Between Night Mode
+14. Make New Buttons
+

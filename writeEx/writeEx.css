@@ -8,8 +8,7 @@
     padding: 10px;
     display: flex;
 
-    background-color: white;
-    border: 1px solid rgba(0, 0, 0, 0.1);
+    border: 1px solid var(--BorderColor);
     margin: 10px 0;
     border-radius: 15px;
     padding: 1rem;
@@ -28,27 +27,28 @@
 }
 
 .Answer {
+    color: var(--textColor);
     min-height: 50px;
     padding: 1rem;
     transition: all 0.25s ease;
     border-radius: 10px;
-    background-color: rgb(248, 248, 248);
-    border: 1px solid rgba(0, 0, 0, 0.1);
+    background-color: var(--BoxBackgroundColor);
+    border: 1px solid var(--BorderColor);
     width: 100%;
 }
 
 .Answer:focus {
-    -webkit-box-shadow: inset 0px 0px 0px 4px #00c700;
-    -moz-box-shadow: inset 0px 0px 0px 4px #00c700;
-    box-shadow: inset 0px 0px 0px 4px #00c700;
+    -webkit-box-shadow: inset 0px 0px 0px 4px var(--GrabGreen);
+    -moz-box-shadow: inset 0px 0px 0px 4px var(--GrabGreen);
+    box-shadow: inset 0px 0px 0px 4px var(--GrabGreen);
     outline: none;
 }
 
 .CorrectAnswer {
-    /* inset 0px 0px 0px 4px #2ba100; */
-    -webkit-box-shadow: inset 0px 0px 0px 4px #2ba100;
-    -moz-box-shadow: inset 0px 0px 0px 4px #2ba100;
-    box-shadow: inset 0px 0px 0px 4px #2ba100;
+    /* inset 0px 0px 0px 4px var(--GrabGreen); */
+    -webkit-box-shadow: inset 0px 0px 0px 4px var(--GrabGreen);
+    -moz-box-shadow: inset 0px 0px 0px 4px var(--GrabGreen);
+    box-shadow: inset 0px 0px 0px 4px var(--GrabGreen);
     transition: all 0.5s ease;
 }
 
@@ -66,7 +66,7 @@
     width: 100%;
     border-radius: 10px;
     padding: 0.5rem;
-    border: 4px solid #17c700;
+    border: 4px solid var(--GrabGreen);
 }
 
 .ContinueButtons {
@@ -76,66 +76,3 @@
 .ContinueButtons button {
     margin: 1rem;
 }
-
-.CheckAnswersButton {
-    display: flex;
-    align-items: center;
-    font-size: 1rem;
-    font-weight: bold;
-
-    margin-top: 20px;
-    margin-bottom: 10px;
-
-    padding: 0.5rem 1rem;
-    /* background-color: hsla(0, 0%, 100%, 0.8); */
-    background-color: white;
-    border: 1px solid rgba(0, 0, 0, 0.1);
-    border-radius: 50px;
-    transition: all 0.5s ease;
-}
-
-.CheckAnswersButton:hover {
-    transition: all 0.5s ease;
-    box-shadow: inset 0px 0px 0px 3px #00c700 !important;
-    border-color: #00c700 !important;
-}
-
-.returnImg {
-    /* width: 30px; */
-    /* height: 30px; */
-    border: none;
-    transition: filter 0.5s ease;
-    z-index: 1;
-}
-
-.CheckAnswersButton:hover .returnButton {
-    background-color: #00c700;
-}
-.CheckAnswersButton:hover .returnImg {
-    transition: filter 0.5s ease;
-    filter: brightness(0) invert(1);
-}
-
-.returnButton {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    width: 36px;
-    height: 36px;
-    margin-left: 10px;
-    /* right: 1rem; */
-    background-color: #f2f2f2;
-    border-radius: 30px;
-    border: none;
-    transition: background-color 0.5s ease;
-    /* width: 100%; */
-    position: relative;
-}
-/* 
-.CorrectAnswerText {
-    background-color: #ecfccb;
-    color: #2ba100;
-    padding: 0.2rem;
-    border: 1px solid #2ba100;
-    border-radius: 4px;
-} */

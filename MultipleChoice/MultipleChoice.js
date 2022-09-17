@@ -33,8 +33,9 @@ function randomIntFromInterval(min, max) {
 
 function updateProgressBar() {
     // console.log(progressBar.offsetWidth)
-    ProgressBarWidthPercentage =
+    ProgressBarWidthPercentage = Math.ceil(
         (progressBar.offsetWidth * 100) / 900 + PBinterval
+    )
     if (ProgressBarWidthPercentage > 100) ProgressBarWidthPercentage = 100
     progressBar.style.width = ProgressBarWidthPercentage + "%"
 }

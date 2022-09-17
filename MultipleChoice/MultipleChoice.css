@@ -14,7 +14,7 @@
     align-items: center;
     font-size: 2rem;
     border-radius: 20px;
-    border: 1px solid rgba(0, 0, 0, 0.1);
+    border: 1px solid var(--BorderColor);
     text-align: center;
     /* padding: 2rem; */
     /* transition: all 0.5s ease; */
@@ -35,7 +35,7 @@
 }
 
 .Answer {
-    border: 1px solid rgba(0, 0, 0, 0.1);
+    border: 1px solid var(--BorderColor);
     box-sizing: border-box;
     width: 440px;
     padding: 25px;
@@ -50,22 +50,6 @@
     -webkit-box-shadow: inset 0px 0px 0px 3px #0099ff;
     box-shadow: inset 0px 0px 0px 3px #0099ff;
 }
-/* progress {
-    border-radius: 20px;
-    background: rgb(255, 255, 255);
-}
-
-progress::-moz-progress-bar {
-    background: lightcolor;
-}
-
-progress::-webkit-progress-value {
-    background: rgb(255, 136, 0);
-}
-
-progress::-webkit-progress-bar {
-    background: rgb(255, 255, 255);
-} */
 
 .MCScreen {
     display: none;

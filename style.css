@@ -3,12 +3,31 @@
     /* box-sizing: content-box; */
 }
 
+/* :root {
+    --backgroundColor: #010409;
+    --textColor: #ffffff;
+    --BorderColor: #30363d;
+    --BoxBackgroundColor: #0d1117;
+    --GrabGreen: #00c700;
+    --ArrowBrightness: 0;
+    --ArrowInvert: 1;
+} */
+
+:root {
+    --backgroundColor: #ffffff;
+    --BoxBackgroundColor: #fafafa;
+    --textColor: #000000;
+    --BorderColor: rgba(0, 0, 0, 0.1);
+    --GrabGreen: #00c700;
+}
+
 body {
     margin: 0;
     display: flex;
     justify-content: center;
-    /* background-color: black; */
-    /* color: white; */
+
+    background-color: var(--backgroundColor);
+    color: var(--textColor);
     font-family: Arial, Helvetica, sans-serif;
     /* max-width: 100vw; */
 }
@@ -40,7 +59,7 @@ body {
     align-items: center;
     /* padding: 1rem; */
     background-color: hsla(0, 0%, 100%, 0.8);
-    border: 1px solid rgba(0, 0, 0, 0.1);
+    border: 1px solid var(--BorderColor);
     border-radius: 50px;
     padding: 0.2rem;
 }
@@ -77,4 +96,67 @@ a {
 
 h3 {
     text-align: center;
+}
+
+.welcomeTitle {
+    /* font-size: 10rem; */
+}
+
+.CheckAnswersButton {
+    display: flex;
+    align-items: center;
+    font-size: 1rem;
+    font-weight: bold;
+
+    color: var(--textColor);
+
+    margin-top: 20px;
+    margin-bottom: 10px;
+
+    padding: 0.5rem 1rem;
+    /* padding-left: 0.75rem; */
+    /* background-color: hsla(0, 0%, 100%, 0.8); */
+    background-color: var(--backgroundColor);
+    border: 1px solid var(--BorderColor);
+    border-radius: 50px;
+    transition: all 0.5s ease;
+}
+
+.CheckAnswersButton:hover {
+    transition: all 0.5s ease;
+    box-shadow: inset 0px 0px 0px 3px var(--GrabGreen) !important;
+    border-color: var(--GrabGreen) !important;
+}
+
+.returnImg {
+    /* width: 30px; */
+    /* height: 30px; */
+    filter: brightness(var(--ArrowBrightness, 1)) invert(var(--ArrowInvert, 0));
+    border: none;
+    transition: filter 0.5s ease;
+    z-index: 1;
+}
+
+.CheckAnswersButton:hover .returnButton {
+    background-color: var(--GrabGreen);
+}
+.CheckAnswersButton:hover .returnImg {
+    transition: filter 0.5s ease;
+    filter: brightness(0) invert(1);
+}
+
+.returnButton {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 36px;
+    height: 36px;
+    margin-left: 10px;
+    /* right: 1rem; */
+    /* background-color: var(--backgroundColor); */
+    border-radius: 30px;
+    border: none;
+    transition: background-color 0.5s ease;
+    /* width: 100%; */
+    position: relative;
 }

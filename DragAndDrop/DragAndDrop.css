@@ -5,9 +5,9 @@ body {
 
 .DragOn {
     /*border-style: dashed;*/
-    border: 1px solid #00c700;
-    -webkit-box-shadow: inset 0px 0px 0px 3px #00c700;
-    box-shadow: inset 0px 0px 0px 3px #00c700;
+    border: 1px solid var(--GrabGreen);
+    -webkit-box-shadow: inset 0px 0px 0px 3px var(--GrabGreen);
+    box-shadow: inset 0px 0px 0px 3px var(--GrabGreen);
     /* cursor: pointer; */
 }
 
@@ -37,8 +37,8 @@ body {
     padding: 1rem;
     transition: all 0.5s ease;
     border-radius: 15px;
-    background-color: white;
-    border: 1px solid rgba(0, 0, 0, 0.1);
+    background-color: var(--backgroundColor);
+    border: 1px solid var(--BorderColor);
     margin: 10px 0;
     width: 500px;
 }
@@ -56,6 +56,7 @@ body {
 
 .AnswerDropZone {
     width: 100%;
+
     /* margin: 1rem 0; */
 }
 
@@ -64,14 +65,15 @@ body {
     padding: 1rem;
     transition: all 0.5s ease;
     border-radius: 15px;
-    background-color: rgb(248, 248, 248);
-    border: 1px solid rgba(0, 0, 0, 0.1);
+    background-color: var(--BoxBackgroundColor);
+    border: 1px solid var(--BorderColor);
+    /* border: 1px solid rgba(0, 0, 0, 0.1); */
 }
 
 .containerParAnswersDivOver {
     /* background-color: red; */
     background-color: blue;
-    background-color: rgb(248, 248, 248);
+    background-color: var(--BoxBackgroundColor);
     transition: background-color 0.5s ease;
     cursor: move;
 }
@@ -80,8 +82,8 @@ body {
     padding: 1rem;
     transition: all 0.5s ease;
     border-radius: 15px;
-    background-color: white;
-    border: 1px solid rgba(0, 0, 0, 0.1);
+    background-color: var(--BoxBackgroundColor);
+    border: 1px solid var(--BorderColor);
     margin: 10px 0;
     width: 470px;
 }
@@ -91,9 +93,10 @@ body {
     transition: all 0.5s ease;
     /* transition: border 0.5s ease, box-shadow 0.5s ease, width 1s ease, */
     /* transform 2.5s, top 2s; */
-    border: 1px solid #00c700;
-    -webkit-box-shadow: inset 0px 0px 0px 3px #00c700;
-    box-shadow: inset 0px 0px 0px 3px #00c700;
+    border: 1px solid var(--GrabGreen);
+
+    -webkit-box-shadow: inset 0px 0px 0px 3px var(--GrabGreen);
+    box-shadow: inset 0px 0px 0px 3px var(--GrabGreen);
 }
 
 .WrongAnswer {
@@ -111,65 +114,10 @@ body {
     width: 100%;
     border-radius: 15px;
     padding: 0.5rem;
-    border: 4px solid #00c700;
+    border: 4px solid var(--GrabGreen);
     /* background-color: #ecfccb; */
-    /* color: #00c700; */
+    /* color: var(--GrabGreen); */
     /* margin-top: 1rem; */
-}
-
-.CheckAnswersButton {
-    display: flex;
-    align-items: center;
-    font-size: 1rem;
-    font-weight: bold;
-
-    margin-top: 20px;
-    margin-bottom: 10px;
-
-    padding: 0.5rem 1rem;
-    /* background-color: hsla(0, 0%, 100%, 0.8); */
-    background-color: white;
-    border: 1px solid rgba(0, 0, 0, 0.1);
-    border-radius: 50px;
-    transition: all 0.5s ease;
-}
-
-.CheckAnswersButton:hover {
-    transition: all 0.5s ease;
-    box-shadow: inset 0px 0px 0px 3px #00c700 !important;
-    border-color: #00c700 !important;
-}
-
-.returnImg {
-    /* width: 30px; */
-    /* height: 30px; */
-    border: none;
-    transition: filter 0.5s ease;
-    z-index: 1;
-}
-
-.CheckAnswersButton:hover .returnButton {
-    background-color: #00c700;
-}
-.CheckAnswersButton:hover .returnImg {
-    transition: filter 0.5s ease;
-    filter: brightness(0) invert(1);
-}
-
-.returnButton {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    width: 36px;
-    height: 36px;
-    margin-left: 10px;
-    /* right: 1rem; */
-    background-color: #f2f2f2;
-    border-radius: 30px;
-    border: none;
-    transition: background-color 0.5s ease;
-    /* width: 100%; */
-    position: relative;
 }
 
 .CorrectAnswerText {
