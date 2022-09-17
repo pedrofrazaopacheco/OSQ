@@ -6,12 +6,13 @@ let LearnURL, currentDeleteItem
 // console.log(items);
 // console.log(Object.keys({ ...localStorage }));
 
-Object.keys({ ...localStorage }).forEach((listItem) =>
-    OSQList.insertAdjacentHTML(
-        "beforeend",
-        `<div class="OSQItem" id="${listItem}">
+Object.keys({ ...localStorage }).forEach((listItem) => {
+    if (listItem != "OSQDataSettings") {
+        OSQList.insertAdjacentHTML(
+            "beforeend",
+            `<div class="OSQItem" id="${listItem}">
     <p class="listItemText">
-        ${listItem}
+    ${listItem}
     </p>
     <div class="Functionbuttons">
         <button onclick="modify('${listItem}')" class="modifyButton">Modify</button>
@@ -21,10 +22,11 @@ Object.keys({ ...localStorage }).forEach((listItem) =>
         <button onclick="DragAndDrop('${listItem}')" class="DragAndDropButton">Drag & Drop</button>
         <button onclick="WriteEx('${listItem}')" class="WriteExButton">WriteEx</button>
         <button onclick="showRemoveConfirmation('${listItem}', event)" class="deleteButton">delete</button>
-    </div>
-    </div>`
-    )
-)
+        </div>
+        </div>`
+        )
+    }
+})
 
 function modify(listItem) {
     const modifyScreen = document.querySelector(".modifyScreen")

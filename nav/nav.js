@@ -5,6 +5,69 @@ document.querySelector(".PageContent").insertAdjacentHTML(
             <a href="/" class="NavLink">OSQ</a>
             <a href="/add" class="NavLink">Add an OSQ</a>
             <a href="/learn" class="NavLink">Learn an OSQ</a>
+            <button onclick="toggleNightMode()" class="toggleNightModeButton">
+                <img
+                    src="/images/sun.svg"
+                    class="sunSVG"
+                />
+                <img
+                    src="/images/nightMode.svg"
+                    class="MoonSVG MoonSVGTranslated"
+                />
+            </button>
     </nav>
 `
 )
+// let OSQDataSettingsObj = {
+//     colorMode: "light",
+// }
+// if (!localStorage.getItem("OSQDataSettings")) {
+//     localStorage.setItem("OSQDataSettings", JSON.stringify(OSQDataSettingsObj))
+// }
+
+let sunSVGEl = document.querySelector(".sunSVG")
+let MoonSVGEl = document.querySelector(".MoonSVG")
+// const root = document.querySelector(":root")
+// let currentColorMode = JSON.parse(
+//     localStorage.getItem("OSQDataSettings")
+// ).colorMode
+
+function setInitialColorMode() {
+    if (currentColorMode == "dark") {
+        sunSVGEl.classList.toggle("sunSVGTranslated")
+        MoonSVGEl.classList.toggle("MoonSVGTranslated")
+    }
+}
+
+setInitialColorMode()
+
+function setDarkMode() {
+    for (const [key, value] of Object.entries(darkModeObj)) {
+        root.style.setProperty(`--${key}`, `${value}`)
+    }
+}
+function setLightMode() {
+    for (const [key, value] of Object.entries(lightModeObj)) {
+        root.style.setProperty(`--${key}`, `${value}`)
+    }
+}
+
+function toggleNightMode() {
+    sunSVGEl.classList.toggle("sunSVGTranslated")
+    MoonSVGEl.classList.toggle("MoonSVGTranslated")
+    if (OSQDataSettingsObj.colorMode == "light") {
+        setDarkMode()
+        OSQDataSettingsObj.colorMode = "dark"
+        localStorage.setItem(
+            "OSQDataSettings",
+            JSON.stringify(OSQDataSettingsObj)
+        )
+    } else {
+        setLightMode()
+        OSQDataSettingsObj.colorMode = "light"
+        localStorage.setItem(
+            "OSQDataSettings",
+            JSON.stringify(OSQDataSettingsObj)
+        )
+    }
+}
