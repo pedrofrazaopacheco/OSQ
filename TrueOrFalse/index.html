@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>OpenSourceQuizzlet</title>
+        <link rel="stylesheet" href="../style.css" />
+        <link rel="stylesheet" href="/TrueOrFalse/TrueOrFalse.css" />
+        <link rel="icon" type="image/x-icon" href="/images/purpleFlower.ico" />
+        <script src="/colorSettings/colorSettings.js"></script>
+    </head>
+    <body>
+        <div class="PageContent">
+            <button
+                onclick="CheckAnswers()"
+                class="CheckAnswersButton checkAnswersButton"
+            >
+                Check Answers
+                <div class="returnButton">
+                    <img src="/images/arrow.svg" class="returnImg" />
+                </div>
+            </button>
+            <h1 class="PressSpaceTitle" style="display: none">
+                Please press space to continue...
+            </h1>
+            <div class="QuestionsGroupDiv">
+                <!-- <div class="QuestionDiv" data-id="">
+                    <div class="Question"></div>
+                    <div class="Answer"></div>
+                    <button class="True" onclick="true()">True</button>
+                    <button class="false" onclick="false()">False</button> -->
+                <!-- </div> -->
+            </div>
+        </div>
+    </body>
+    <script src="/TrueOrFalse/TrueOrFalse.js"></script>
+    <script src="/nav/nav.js" defer></script>
+</html>

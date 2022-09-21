@@ -1,0 +1,84 @@
+.QuestionsGroupDiv {
+    width: 1000px;
+}
+
+.QuestionDiv {
+    padding: 20px;
+    transition: all 0.5s ease;
+    border-radius: 15px;
+    background-color: var(--backgroundColor);
+    border: 1px solid var(--BorderColor);
+    margin: 1rem 0;
+}
+
+.buttonsDiv {
+    width: 100%;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    column-gap: 20px;
+}
+
+.TFButton {
+    color: var(--textColor);
+    padding: 0.75rem;
+    background-color: var(--BoxBackgroundColor);
+    border: 1px solid var(--BorderColor);
+    border-radius: 10px;
+    transition: all 0.5s ease;
+    font-size: 1rem;
+    font-weight: 900;
+}
+
+.Answer {
+    margin: 20px 0;
+}
+.WrongQuestionDiv {
+    border: 1px solid #f00;
+    -webkit-box-shadow: inset 0px 0px 0px 4px #f00;
+    -moz-box-shadow: inset 0px 0px 0px 4px #f00;
+    box-shadow: inset 0px 0px 0px 4px #f00;
+}
+
+.True:hover {
+    border: 1px solid var(--GrabGreen);
+    -webkit-box-shadow: inset 0px 0px 0px 4px var(--GrabGreen);
+    -moz-box-shadow: inset 0px 0px 0px 4px var(--GrabGreen);
+    box-shadow: inset 0px 0px 0px 4px var(--GrabGreen);
+}
+.False:hover {
+    border: 1px solid #f00;
+    -webkit-box-shadow: inset 0px 0px 0px 4px #f00;
+    -moz-box-shadow: inset 0px 0px 0px 4px #f00;
+    box-shadow: inset 0px 0px 0px 4px #f00;
+}
+
+.TrueSelected {
+    border: 1px solid var(--GrabGreen);
+    -webkit-box-shadow: inset 0px 0px 0px 3px var(--GrabGreen);
+    box-shadow: inset 0px 0px 0px 3px var(--GrabGreen);
+}
+.FalseSelected {
+    -webkit-box-shadow: inset 0px 0px 0px 4px #f00;
+    -moz-box-shadow: inset 0px 0px 0px 4px #f00;
+    box-shadow: inset 0px 0px 0px 4px #f00;
+}
+.AnswerAfterCheckDiv {
+    line-height: 25px;
+    border-radius: 15px;
+
+    height: 0;
+    padding: 0 0.5rem;
+
+    transition: padding 0.25s ease;
+}
+
+.AnswerAfterCheckDivAnimated {
+    margin-top: 1rem;
+    border-radius: 15px;
+    padding: 0.5rem;
+    border: 4px solid var(--GrabGreen);
+
+    /* opacity: 0; */
+    height: auto;
+    transition: all 0.25s ease;
+}

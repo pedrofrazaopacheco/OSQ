@@ -15,13 +15,14 @@ Object.keys({ ...localStorage }).forEach((listItem) => {
     ${listItem}
     </p>
     <div class="Functionbuttons">
-        <button onclick="modify('${listItem}')" class="modifyButton">Modify</button>
-        <button onclick="learnCards('${listItem}')" class="learnButton">Learn Cards</button>
-        <button onclick="DropDown('${listItem}')" class="DropDownButton">DropDown</button>
-        <button onclick="MultipleChoice('${listItem}')" class="MultipleChoice">MultipleChoice</button>
-        <button onclick="DragAndDrop('${listItem}')" class="DragAndDropButton">Drag & Drop</button>
-        <button onclick="WriteEx('${listItem}')" class="WriteExButton">WriteEx</button>
-        <button onclick="showRemoveConfirmation('${listItem}', event)" class="deleteButton">delete</button>
+        <button onclick="modify('${listItem}')" class="modifyButton learnButton">Modify</button>
+        <button onclick="learnCards('${listItem}')" class="learnButton learnButton">Learn Cards</button>
+        <button onclick="DropDown('${listItem}')" class="DropDownButton learnButton">DropDown</button>
+        <button onclick="MultipleChoice('${listItem}')" class="MultipleChoice learnButton">MultipleChoice</button>
+        <button onclick="DragAndDrop('${listItem}')" class="DragAndDropButton learnButton">Drag & Drop</button>
+        <button onclick="TrueOrFalse('${listItem}')" class="TrueOrFalseButton learnButton">TrueOrFalse</button>
+        <button onclick="WriteEx('${listItem}')" class="WriteExButton learnButton">WriteEx</button>
+        <button onclick="showRemoveConfirmation('${listItem}', event)" class="deleteButton learnButton">delete</button>
         </div>
         </div>`
         )
@@ -130,4 +131,9 @@ function DragAndDrop(listItem) {
 function DropDown(listItem) {
     document.location.href =
         `/DropDown/?continue=` + encodeURIComponent(listItem)
+}
+
+function TrueOrFalse(listItem) {
+    document.location.href =
+        `/TrueOrFalse/?continue=` + encodeURIComponent(listItem)
 }

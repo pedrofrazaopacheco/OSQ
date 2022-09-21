@@ -13,13 +13,14 @@
     --ArrowInvert: 1;
 } */
 
-:root {
+/* :root {
     --backgroundColor: #ffffff;
     --BoxBackgroundColor: #fafafa;
     --textColor: #000000;
     --BorderColor: rgba(0, 0, 0, 0.1);
     --GrabGreen: #00c700;
-}
+    --CardBackgroundColor: #fcfcfc;
+} */
 
 body {
     margin: 0;
@@ -54,7 +55,8 @@ body {
     box-shadow: 0 10px 10px -5px rgba(0, 0, 0, 0.1);
     display: flex;
     align-items: center;
-    background-color: hsla(0, 0%, 100%, 0.8);
+    /* background-color: hsla(0, 0%, 100%, 0.8); */
+    background-color: var(--backgroundColor);
     border: 1px solid var(--BorderColor);
     border-radius: 50px;
     padding: 0.2rem;
@@ -64,7 +66,7 @@ body {
 a {
     color: #999;
     margin: 0;
-    margin-right: 0 0.25rem;
+    margin-right: 0.25rem;
     text-decoration: none;
     font-weight: 900;
     padding: 1rem;
@@ -72,9 +74,9 @@ a {
     transition: all 0.5s ease;
 }
 
-.GoToLinks *:hover {
-    background-color: #f2f2f2;
-    color: black;
+.NavButton:hover {
+    background-color: var(--GoToLinksHover);
+    color: var(--textColor);
     transition: all 0.5s ease;
 }
 
@@ -162,6 +164,7 @@ h3 {
     flex-direction: column;
     overflow: hidden;
     border-radius: 50px;
+    background-color: transparent;
 }
 
 .sunSVG,
@@ -171,6 +174,7 @@ h3 {
     position: absolute;
     margin: 0 20px;
     transition: all 0.25s ease;
+    filter: brightness(var(--ArrowBrightness)) invert(var(--ArrowInvert));
 }
 
 .toggleNightModeButton:hover .sunSVG,

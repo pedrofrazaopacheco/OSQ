@@ -36,7 +36,7 @@ GOALS
 9. Make Consistent design across Style
 10. Push the Title To The Left
 11. Experiment New NavBar
-12. Make Card Animation
+Done - 12. Make Card Animation
 Done - 13. Toggle Between Night Mode
 14. Make New Buttons
 

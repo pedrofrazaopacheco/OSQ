@@ -24,7 +24,7 @@
 
 .SelectedOSQCard {
     border: 1px solid var(--BorderColor);
-    background-color: #fcfcfc;
+    background-color: var(--CardBackgroundColor);
 }
 
 .card {

@@ -17,9 +17,17 @@
             <div class="OSQList"></div>
             <div class="blurDiv" onclick="exit()"></div>
             <div class="removeConfirmation">
-                <h3>Are you sure you want to delete this OSQ?</h3>
-                <button onclick="remove()">Yes, Remove</button>
-                <button onclick="exit()">No, Cancel</button>
+                <h3 class="removeConfirmationTitle">
+                    Are you sure you want to delete this OSQ?
+                </h3>
+                <div class="removeConfirmationButtonsDiv">
+                    <button onclick="remove()" class="removeConfirmationButton">
+                        Yes, Remove
+                    </button>
+                    <button onclick="exit()" class="exitConfirmationButton">
+                        No, Cancel
+                    </button>
+                </div>
             </div>
             <div class="modifyScreen">
                 <!-- <p>Add here an OSQ</p> -->
