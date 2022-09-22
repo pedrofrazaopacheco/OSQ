@@ -31,12 +31,12 @@ GOALS
 4. Add a DropDown Option To Groups
 5. Choose a Color for a set
 6. Fix Modify Screen
-7. Make True Or False Game
-8. Fix Confirm Delete Screen
-9. Make Consistent design across Style
+    Done - 7. Make True Or False Game
+    Done - 8. Fix Confirm Delete Screen
+    Done - 9. Make Consistent design across Style
 10. Push the Title To The Left
 11. Experiment New NavBar
-Done - 12. Make Card Animation
-Done - 13. Toggle Between Night Mode
-14. Make New Buttons
+    Done - 12. Make Card Animation
+    Done - 13. Toggle Between Night Mode
+    Done - 14. Make New Buttons
 

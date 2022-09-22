@@ -101,11 +101,13 @@ function toggleTextOnSpace(element) {
     element.classList.toggle("OSQCardRotated")
 }
 
-document.addEventListener("keyup", (event) => {
+document.addEventListener("keydown", (event) => {
     if (event.code == "ArrowRight") Next()
     if (event.code == "ArrowLeft") Previous()
-    if (event.code == "Space")
+    if (event.code == "Space") {
+        event.preventDefault()
         toggleTextOnSpace(OSQCardList.children[currentCard])
+    }
 })
 
 function Reset() {

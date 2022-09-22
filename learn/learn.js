@@ -37,6 +37,7 @@ function modify(listItem) {
 
     modifyScreen.style.display = "flex"
     document.querySelector(".blurDiv").style.display = "block"
+    // document.querySelector(".blurDiv").classList.add("BlurDivShow")
 
     OSQName.value = listItem
     const dataObj = JSON.parse(localStorage.getItem(listItem))
@@ -84,6 +85,7 @@ function exit() {
     document.querySelector(".removeConfirmation").style.display = "none"
     document.querySelector(".modifyScreen").style.display = "none"
     document.querySelector(".blurDiv").style.display = "none"
+    // document.querySelector(".blurDiv").classList.remove("BlurDivShow")
 }
 
 function learnCards(listItem) {
@@ -113,7 +115,7 @@ function remove() {
 
 function showRemoveConfirmation(listItem, event) {
     document.querySelector(".blurDiv").style.display = "block"
-
+    // document.querySelector(".blurDiv").classList.add("BlurDivShow")
     currentDeleteItem = event.target.parentElement.parentElement
     document.querySelector(".removeConfirmation").style.display = "block"
 }
