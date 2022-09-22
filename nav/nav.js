@@ -3,7 +3,7 @@ let head = document.getElementsByTagName("head")[0]
 
 linksList.forEach((el) => {
     let PreLink = document.createElement("link")
-    PreLink.rel = "dns-prefetch"
+    PreLink.rel = "prefetch"
     PreLink.href = el
     head.appendChild(PreLink)
 })
