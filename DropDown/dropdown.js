@@ -58,7 +58,7 @@ for (let i = 0; i < dataArrayClone.length; i++) {
         <div class="AnswerWithImageDiv">
         <div class="Answer">Choose an option ...</div>
         <img
-        src="/images/DropDownArrow.svg"
+        src="/images/DropDownArrowOutline.svg"
         class="DropDownImage"
         alt=""
         />

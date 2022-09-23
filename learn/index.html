@@ -31,21 +31,52 @@
             </div>
             <div class="modifyScreen">
                 <!-- <p>Add here an OSQ</p> -->
-                <div class="InputGroup">
-                    <p class="noMargin">Please insert your OSQ name</p>
-                    <input
-                        type="text"
-                        class="InputMargin OSQNameInput"
-                        placeholder="OSQ Name"
-                    />
-                </div>
-                <div class="InputGroup">
-                    <p class="noMargin">Please Insert your Separator</p>
-                    <input
-                        type="text"
-                        class="SeparatorInput InputMargin"
-                        placeholder="Separator ex: - "
-                    />
+                <div class="InputGrid">
+                    <div class="InputGroup">
+                        <p class="noMargin InputNameTitle">OSQ name</p>
+                        <input
+                            type="text"
+                            class="InputMargin SeparatorInput OSQNameInput"
+                            placeholder="OSQ Name"
+                        />
+                    </div>
+                    <div class="InputGroup">
+                        <p class="noMargin InputNameTitle">Your Separator</p>
+                        <input
+                            type="text"
+                            class="SeparatorInput InputMargin"
+                            id="SeparatorInputID"
+                            placeholder="Separator ex: - "
+                        />
+                    </div>
+
+                    <div class="InputGroup">
+                        <!-- <p class="noMargin InputNameTitle InputQP">Group</p> -->
+                        <div
+                            class="AnswerDiv"
+                            onclick="ToogleQuestionDiv(this, event)"
+                        >
+                            <div class="AnswerWithImageDiv">
+                                <div class="Answer">Choose an option ...</div>
+                                <img
+                                    src="/images/DropDownArrowOutline.svg"
+                                    class="DropDownImage"
+                                    alt=""
+                                />
+                            </div>
+                            <div class="AnswerOption SetNewGroupOption">
+                                Set New Group
+                            </div>
+                        </div>
+                    </div>
+                    <div class="InputGroup SetNewGroup">
+                        <p class="noMargin InputNameTitle">Set New Group</p>
+                        <input
+                            type="text"
+                            class="SeparatorInput InputMargin SetNewGroupInput"
+                            placeholder="Set New Group"
+                        />
+                    </div>
                 </div>
 
                 <textarea
@@ -54,22 +85,15 @@
                     rows="20"
                     cols="100"
                     style="resize: none"
-                    placeholder="Please insert your questions and your answers here"
+                    placeholder="Term Example - Definition Example => Separator = ' - '"
                 ></textarea>
                 <div class="buttonsDiv">
                     <button onclick="submit()" class="submitButton">
-                        <img
-                            src="/images/checkmark.svg"
-                            class="modifyScreenButton checkmarkSvg"
-                            alt=""
-                        />
+                        Submit
+                        <img src="/images/arrow.svg" class="returnImg2" />
                     </button>
                     <button onclick="exit()" class="cancelButton">
-                        <img
-                            src="/images/cross.svg"
-                            class="modifyScreenButton crossSVG"
-                            alt=""
-                        />
+                        Cancel
                     </button>
                 </div>
             </div>

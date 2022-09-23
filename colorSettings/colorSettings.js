@@ -10,16 +10,19 @@ const darkModeObj = {
     textColor: "#ffffff",
     BorderColor: "#30363d",
     BoxBackgroundColor: "#0d1117",
+    BoxBackgroundColorStrong: "#0d1117",
     GrabGreen: "#1ec718",
     ArrowBrightness: "0",
     ArrowInvert: "1",
     CardBackgroundColor: "#0d1117",
     GoToLinksHover: "#13181f",
+    BWBorderColor: "white",
 }
 
 const lightModeObj = {
     backgroundColor: "#ffffff",
     BoxBackgroundColor: "#fafafa",
+    BoxBackgroundColorStrong: "rgb(243, 243, 243)",
     textColor: "#000000",
     BorderColor: "rgba(0, 0, 0, 0.1)",
     GrabGreen: "#1ec718",
@@ -27,6 +30,7 @@ const lightModeObj = {
     ArrowInvert: "0",
     CardBackgroundColor: "#fcfcfc",
     GoToLinksHover: "#f2f2f2",
+    BWBorderColor: "black",
 }
 
 // let sunSVGEl = document.querySelector(".sunSVG")

@@ -27,9 +27,9 @@ GOALS
 
 1. Fix Homepage
 2. Fix Add an OSQ
-3. Make Groups
-4. Add a DropDown Option To Groups
-5. Choose a Color for a set
+In Progress - 3. Make Groups
+In Progress - 4. Add a DropDown Option To Groups
+In Progress - 5. Choose a Color for a set
 6. Fix Modify Screen
     Done - 7. Make True Or False Game
     Done - 8. Fix Confirm Delete Screen

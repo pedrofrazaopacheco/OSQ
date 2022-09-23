@@ -22,62 +22,74 @@
                 Sorry! That name already exists in the localStorage!. Change the
                 name or navigate <a href="/learn">here</a> to modify it
             </div>
-            <div class="InputMainGroup">
-                <div class="InputGroup">
-                    <p class="noMargin InputQP">OSQ name</p>
-                    <input
-                        type="text"
-                        class="InputQ OSQNameInput"
-                        placeholder="OSQ Name"
-                    />
-                </div>
-                <div class="InputGroup">
-                    <p class="noMargin InputQP">Separator</p>
-                    <input
-                        type="text"
-                        class="InputQ SeparatorInput"
-                        placeholder="Separator ex: - "
-                    />
-                </div>
-            </div>
-            <div class="InputMainGroup">
-                <div class="InputGroup">
-                    <p class="noMargin InputQP">Group</p>
-                    <input
-                        type="text"
-                        class="InputQ SeparatorInput"
-                        placeholder="Separator ex: - "
-                    />
-                </div>
-                <div class="InputGroup">
-                    <!-- <p class="noMargin InputQP">Group</p> -->
-                    <div
-                        class="AnswerDiv"
-                        onclick="ToogleQuestionDiv(this, event)"
-                    >
-                        <div class="AnswerWithImageDiv">
-                            <div class="Answer">Choose an option ...</div>
-                            <img
-                                src="/images/DropDownArrow.svg"
-                                class="DropDownImage"
-                                alt=""
-                            />
+            <div class="modifyScreen">
+                <!-- <p>Add here an OSQ</p> -->
+                <div class="InputGrid">
+                    <div class="InputGroup">
+                        <p class="noMargin InputNameTitle">OSQ name</p>
+                        <input
+                            type="text"
+                            class="InputMargin SeparatorInput OSQNameInput"
+                            placeholder="OSQ Name"
+                        />
+                    </div>
+                    <div class="InputGroup">
+                        <p class="noMargin InputNameTitle">Your Separator</p>
+                        <input
+                            type="text"
+                            class="SeparatorInput InputMargin"
+                            id="SeparatorInputID"
+                            placeholder="Separator ex: - "
+                        />
+                    </div>
+
+                    <div class="InputGroup">
+                        <!-- <p class="noMargin InputNameTitle InputQP">Group</p> -->
+                        <div
+                            class="AnswerDiv"
+                            onclick="ToogleQuestionDiv(this, event)"
+                        >
+                            <div class="AnswerWithImageDiv">
+                                <div class="Answer">Set New Group</div>
+                                <img
+                                    src="/images/DropDownArrowOutline.svg"
+                                    class="DropDownImage"
+                                    alt=""
+                                />
+                            </div>
+                            <div class="AnswerOption SetNewGroupOption">
+                                Set New Group
+                            </div>
                         </div>
-                        <!-- <div class="AnswerOption">The4AnswersArray[0]</div> -->
-                        <!-- <div class="AnswerOption">The4AnswersArray[0]</div> -->
+                    </div>
+                    <div class="InputGroup SetNewGroup">
+                        <p class="noMargin InputNameTitle">Set New Group</p>
+                        <input
+                            type="text"
+                            class="SeparatorInput InputMargin SetNewGroupInput"
+                            placeholder="Set New Group"
+                        />
                     </div>
                 </div>
-            </div>
 
-            <textarea
-                id="AddOSQArea"
-                name="AddOSQArea"
-                rows="20"
-                cols="100"
-                style="resize: none"
-                placeholder="Term - Definition, separator = ' - '"
-            ></textarea>
-            <button onclick="submit()" class="submitButton">Submit OSQ</button>
+                <textarea
+                    id="AddOSQArea"
+                    name="AddOSQArea"
+                    rows="20"
+                    cols="100"
+                    style="resize: none"
+                    placeholder="Term Example - Definition Example => Separator = ' - '"
+                ></textarea>
+                <div class="buttonsDiv">
+                    <button onclick="submit()" class="submitButton">
+                        Submit
+                        <img src="/images/arrow.svg" class="returnImg2" />
+                    </button>
+                    <button onclick="exit()" class="cancelButton">
+                        Cancel
+                    </button>
+                </div>
+            </div>
         </div>
     </body>
     <script src="/add/add.js"></script>

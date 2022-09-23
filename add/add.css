@@ -10,7 +10,7 @@
 }
 
 .submitButton {
-    margin: 1rem;
+    /* margin: 1rem; */
 }
 
 .InputGroup * {
@@ -55,59 +55,6 @@
     text-align: center;
 }
 
-.Options {
-    padding: 0.25rem;
-    width: 200px;
-    border: 1px solid #00c700;
-}
-
-.AnswerOption:hover,
-.AnswerWithImageDiv:hover {
-    border: 1px solid #00c700;
-    -webkit-box-shadow: inset 0px 0px 0px 3px #00c700;
-    box-shadow: inset 0px 0px 0px 3px #00c700;
-    transition: all 0.5s ease;
-}
-
-.AnswerOption {
-    border: 0px solid transparent;
-    border-radius: 10px;
-    transition: all 1.5s ease;
-    width: 100%;
-
-    height: 0;
-    overflow: hidden;
-    padding: 0 1rem;
-
-    /* opacity: 0; */
-    transition: padding 0.25s ease;
-}
-
-.AnswerWithImageDiv {
-    padding: 1rem;
-    /* border: 1px solid rgba(0, 0, 0, 0.1); */
-    border: 1px solid transparent;
-    /* border-bottom: 1px solid rgba(0, 0, 0, 0.1); */
-    border-radius: 10px;
-    font-weight: 900;
-
-    transition: all 0.5s ease;
-    display: flex;
-    /* align-items: center; */
-    justify-content: space-between;
-}
-
-.DropDownImage {
-    width: 30px;
-    height: 15px;
-    transition: all 0.25s;
-}
-
-.DropDownImageAnimated {
-    transform: rotate(-180deg);
-    transition: all 0.25s;
-}
-
 .AnswerOptionAnimated {
     /* opacity: 1; */
     border-width: 1px;
@@ -128,4 +75,205 @@
     /* flex-direction: column; */
     cursor: pointer;
     /* border: 1px solid black; */
+}
+
+.InputGroup {
+    position: relative;
+    display: flex;
+    margin: 0.5rem 0;
+    /* margin-left: 0; */
+}
+
+/* .AnswerWithImageDiv:hover, */
+.AnswerOption:hover {
+    /* border: 1px solid #00c700; */
+    /* border: 1px solid black; */
+
+    /* box-shadow: inset 0px 0px 0px 1px black; */
+    /* background-color: rgb(243, 243, 243); */
+    background-color: var(--BoxBackgroundColor);
+    /* -webkit-box-shadow: inset 0px 0px 0px 3px #00c700;
+    box-shadow: inset 0px 0px 0px 3px #00c700;
+    transition: all 0.5s ease; */
+}
+
+.AnswerWithImageDiv {
+    padding: 0.2rem 0.5rem;
+    /* border: 1px solid rgba(0, 0, 0, 0.1); */
+    border: 1px solid transparent;
+    /* border-bottom: 1px solid rgba(0, 0, 0, 0.1); */
+    border-radius: 4px;
+    /* font-weight: 900; */
+
+    transition: all 0.5s ease;
+    display: flex;
+    height: 30px;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.DropDownImage {
+    width: 16px;
+    height: 8px;
+    filter: brightness(var(--ArrowBrightness)) invert(var(--ArrowInvert));
+    transition: all 400ms cubic-bezier(0, 0, 0, 1);
+}
+
+.DropDownImageAnimated {
+    transform: rotate(-180deg);
+    transition: all 400ms cubic-bezier(0, 0, 0, 1);
+}
+
+.AnswerOption {
+    border: 0px solid transparent;
+    /* border-radius: 4px; */
+    /* transition: all 1.5s ease; */
+    width: 100%;
+
+    height: 0;
+    overflow: hidden;
+    padding: 0 0.5rem;
+    display: flex;
+    align-items: center;
+    /* opacity: 0; */
+    transition: padding 0.15s ease;
+}
+
+.AnswerOptionAnimated {
+    /* opacity: 1; */
+    border-width: 1px;
+    /* min-height: 30px; */
+    height: auto;
+    /* padding: rem; */
+    font-size: 0.9rem;
+    padding: 0.5rem 0.5rem;
+    transition: padding 0.15s ease;
+    /* border: 1px solid black; */
+
+    /* transition: all 0.5s ease; */
+}
+
+.AnswerDiv {
+    position: absolute;
+    top: 0;
+    /* height: 30px; */
+    font-size: 0.9rem;
+
+    border: 1px solid var(--BWBorderColor);
+    width: 100%;
+    border-radius: 4px;
+    background-color: var(--backgroundColor);
+
+    cursor: pointer;
+}
+
+.SetNewGroup {
+    display: none;
+    /* position: absolute; */
+    /* left: 320px; */
+}
+.SetNewGroupOption {
+}
+
+.SeparatorInput {
+    border: 1px solid #222;
+    padding: 0.3rem;
+    border-radius: 4px;
+    height: 30px;
+    width: 100%;
+}
+
+.InputGroupRow {
+    display: flex;
+    width: 90%;
+    height: 50px;
+    display: flex;
+    align-items: center;
+    position: relative;
+}
+
+.InputNameTitle {
+    width: 40%;
+    display: flex;
+    align-items: center;
+}
+
+.InputGrid {
+    width: 100%;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 1fr 1fr;
+    column-gap: 20px;
+    margin-bottom: 10px;
+}
+
+.OSQNameInput {
+    width: 100%;
+}
+
+.SubmitCancelActionButton {
+    background-color: var(--backgroundColor);
+}
+
+.submitButton:hover {
+    /* transition: all 0.5s ease; */
+    /* background-color: #00c700; */
+    /* color: white; */
+    /* border-color: #00c700; */
+    background-color: var(--BoxBackgroundColor);
+}
+
+.cancelButton:hover {
+    background-color: var(--BoxBackgroundColor);
+
+    /* border-color: #f00; */
+    /* transition: all 0.5s ease; */
+    /* background-color: #fc0000; */
+    /* color: white; */
+}
+
+.buttonsDiv {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    column-gap: 10px;
+    margin: 0.5rem 0;
+    width: 100%;
+}
+
+.submitButton,
+.cancelButton {
+    padding: 0.5rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: var(--backgroundColor);
+    font-size: 1rem;
+    font-weight: 900;
+    border: 1px solid var(--BWBorderColor);
+    border-radius: 6px;
+    color: var(--textColor);
+}
+
+.returnImg2 {
+    width: 22px;
+    height: 22px;
+}
+
+.returnImg2 {
+    filter: brightness(var(--ArrowBrightness)) invert(var(--ArrowInvert));
+}
+
+input,
+textarea {
+    background-color: var(--BoxBackgroundColor);
+    color: var(--textColor);
+}
+
+textarea {
+    border-radius: 6px;
+    padding: 1rem;
+}
+
+.SelectedOption {
+    background-color: var(--BoxBackgroundColorStrong) !important;
 }

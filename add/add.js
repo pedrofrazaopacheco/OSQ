@@ -10,9 +10,12 @@ const NameAlreadyExistsDiv = document.querySelector(".nameExistsWarning")
 
 let OpenAndCloseDivBoolean = false
 const groupsSet = new Set()
+let currentDataSetGroup, prevDiv
 
-Object.keys({ ...localStorage }).forEach((listItem) => {
-    groupsSet.add(listItem)
+Object.values({ ...localStorage }).forEach((listItem) => {
+    // console.log(JSON.parse(listItem))
+    currentDataSetGroup = JSON.parse(listItem).group
+    if (currentDataSetGroup) groupsSet.add(JSON.parse(listItem).group)
 })
 
 groupsSet.forEach((el) => {
@@ -24,16 +27,71 @@ groupsSet.forEach((el) => {
     )
 })
 
+prevDiv = Array.from(document.querySelector(".AnswerDiv").children)[1]
+prevDiv.classList.add("SelectedOption")
+
+// function submit() {
+//     if (Object.keys({ ...localStorage }).includes(OSQName.value)) {
+//         console.log("That name already exists! Sorry")
+//         NameAlreadyExistsDiv.style.display = "inline"
+//         return 1
+//     }
+
+//     const arrayOfLines = textarea.value.split("\n")
+//     const SeparatorValue = Separator.value
+//     const myObj = { dataArray: [], separator: SeparatorValue }
+
+//     arrayOfLines.forEach((line) => {
+//         line = line.split(SeparatorValue)
+//         if (line[0] != "") {
+//             myObj.dataArray.push([line[0], line[1], "D"])
+//         }
+//     })
+//     const myJSON = JSON.stringify(myObj)
+//     localStorage.setItem(OSQName.value, myJSON)
+
+//     NameAlreadyExistsDiv.style.display = "none"
+
+//     textarea.value = ""
+//     OSQName.value = ""
+//     Separator.value = ""
+//     console.log(localStorage)
+
+//     //   const items = { ...localStorage };
+//     //   console.log(items);
+// }
+
 function submit() {
+    const modifyScreen = document.querySelector(".modifyScreen")
+    const textarea = document.querySelector("textarea")
+    const OSQName = document.querySelector(".OSQNameInput")
+    const Separator = document.querySelector("#SeparatorInputID")
+    const arrayOfLines = textarea.value.split("\n")
+    const SeparatorValue = Separator.value
+    let groupName
+
     if (Object.keys({ ...localStorage }).includes(OSQName.value)) {
         console.log("That name already exists! Sorry")
         NameAlreadyExistsDiv.style.display = "inline"
         return 1
     }
 
-    const arrayOfLines = textarea.value.split("\n")
-    const SeparatorValue = Separator.value
-    const myObj = { dataArray: [], separator: SeparatorValue }
+    if (
+        modifyScreen.querySelector(".Answer").textContent.trim() ==
+        "Set New Group"
+    ) {
+        groupName = document.querySelector(".SetNewGroupInput").value
+    } else {
+        groupName = document.querySelector(".Answer").textContent
+    }
+
+    // groupsSet.add(groupName)
+
+    const myObj = {
+        dataArray: [],
+        separator: SeparatorValue,
+        group: groupName,
+    }
 
     arrayOfLines.forEach((line) => {
         line = line.split(SeparatorValue)
@@ -44,15 +102,19 @@ function submit() {
     const myJSON = JSON.stringify(myObj)
     localStorage.setItem(OSQName.value, myJSON)
 
-    NameAlreadyExistsDiv.style.display = "none"
-
     textarea.value = ""
     OSQName.value = ""
     Separator.value = ""
-    console.log(localStorage)
+    document.querySelector(".SetNewGroupInput").value = ""
+    // console.log("Submit: " + { ...localStorage })
+}
 
-    //   const items = { ...localStorage };
-    //   console.log(items);
+function SetNewGroup() {
+    document.querySelector(".SetNewGroup").style.display = "flex"
+}
+
+function CloseNewGroup() {
+    document.querySelector(".SetNewGroup").style.display = "none"
 }
 
 function ToogleQuestionDiv(div, event) {
@@ -67,5 +129,19 @@ function ToogleQuestionDiv(div, event) {
     })
     if (Array.from(event.target.classList).includes("AnswerOption")) {
         div.querySelector(".Answer").textContent = event.target.textContent
+        prevDiv.classList.remove("SelectedOption")
+        event.target.classList.add("SelectedOption")
+        prevDiv = event.target
     }
+
+    let currentAnswer = document.querySelector(".Answer").textContent
+
+    if (
+        event.target.textContent.trim() == "Set New Group" ||
+        currentAnswer.trim() == "Set New Group"
+    )
+        SetNewGroup()
+    else CloseNewGroup()
 }
+
+SetNewGroup()
