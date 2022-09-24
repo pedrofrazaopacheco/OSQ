@@ -66,14 +66,32 @@ function submit() {
     const textarea = document.querySelector("textarea")
     const OSQName = document.querySelector(".OSQNameInput")
     const Separator = document.querySelector("#SeparatorInputID")
+    const GroupCantBeEmpty = document.querySelector(".GroupCantBeEmpty")
     const arrayOfLines = textarea.value.split("\n")
     const SeparatorValue = Separator.value
     let groupName
 
     if (Object.keys({ ...localStorage }).includes(OSQName.value)) {
-        console.log("That name already exists! Sorry")
+        // console.log("That name already exists! Sorry")
         NameAlreadyExistsDiv.style.display = "inline"
         return 1
+    } else {
+        NameAlreadyExistsDiv.style.display = "none"
+    }
+    if (
+        document.querySelector(".SetNewGroupInput").value == "" &&
+        document.querySelector(".SetNewGroup").style.display != "none"
+    ) {
+        GroupCantBeEmpty.style.display = "inline"
+        return 1
+    } else {
+        GroupCantBeEmpty.style.display = "none"
+    }
+    if (textarea.value == "") {
+        document.querySelector(".EmptyTextArea").style.display = "inline"
+        return 1
+    } else {
+        document.querySelector(".EmptyTextArea").style.display = "none"
     }
 
     if (

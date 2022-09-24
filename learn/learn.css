@@ -421,3 +421,13 @@ textarea {
     -webkit-box-shadow: inset 0px 0px 0px 3px #fc0000;
     box-shadow: inset 0px 0px 0px 3px #fc0000;
 }
+
+.Warning {
+    /* border: 1px solid var(--BWBorderColor); */
+    font-weight: 900;
+    background-color: var(--BoxBackgroundColorStrong);
+    padding: 0.5rem;
+    border-radius: 4px;
+    display: none;
+    margin-bottom: 1rem;
+}

@@ -26,11 +26,11 @@ Read, Select, Revise, and Check Your Answers for the first study row
 GOALS
 
 1. Fix Homepage
-2. Fix Add an OSQ
-In Progress - 3. Make Groups
-In Progress - 4. Add a DropDown Option To Groups
-In Progress - 5. Choose a Color for a set
-6. Fix Modify Screen
+    Done - 2. Fix Add an OSQ
+    Done - 3. Make Groups
+    Done - 4. Add a DropDown Option To Groups
+5. Choose a Color for a set
+    Done - 6. Fix Modify Screen
     Done - 7. Make True Or False Game
     Done - 8. Fix Confirm Delete Screen
     Done - 9. Make Consistent design across Style
@@ -39,4 +39,5 @@ In Progress - 5. Choose a Color for a set
     Done - 12. Make Card Animation
     Done - 13. Toggle Between Night Mode
     Done - 14. Make New Buttons
+    Done - 15. Fix Inputs Being Empty
 

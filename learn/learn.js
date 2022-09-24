@@ -8,7 +8,7 @@ let LearnURL, currentDeleteItem
 
 let OpenAndCloseDivBoolean = false
 const groupsSet = new Set()
-let currentDataSetGroup, currentDeleteDiv
+let currentDataSetGroup, currentDeleteDiv, currentOSQNameForSubmit
 
 Object.values({ ...localStorage }).forEach((listItem) => {
     // console.log(JSON.parse(listItem))
@@ -57,28 +57,37 @@ function ToogleQuestionDiv(div, event) {
     else CloseNewGroup()
 }
 
-Object.keys({ ...localStorage }).forEach((listItem) => {
-    if (listItem != "OSQDataSettings") {
-        OSQList.insertAdjacentHTML(
-            "beforeend",
-            `<div class="OSQItem" id="${listItem}">
-    <p class="listItemText">
-    ${listItem}
+// console.log(groupsSet)
+
+groupsSet.forEach((group) => {
+    OSQList.insertAdjacentHTML("beforeend", `<h1>${group}</h1>`)
+
+    for (const [key, value] of Object.entries({ ...localStorage })) {
+        if (key != "OSQDataSettings" && JSON.parse(value).group == group) {
+            OSQList.insertAdjacentHTML(
+                "beforeend",
+                `<div class="OSQItem" id="${key}">
+    <p class="keyText">
+    ${key}
     </p>
     <div class="Functionbuttons">
-        <button onclick="modify('${listItem}')" class="modifyButton learnButton">Modify</button>
-        <button onclick="learnCards('${listItem}')" class="learnButton learnButton">Learn Cards</button>
-        <button onclick="DropDown('${listItem}')" class="DropDownButton learnButton">DropDown</button>
-        <button onclick="MultipleChoice('${listItem}')" class="MultipleChoice learnButton">MultipleChoice</button>
-        <button onclick="DragAndDrop('${listItem}')" class="DragAndDropButton learnButton">Drag & Drop</button>
-        <button onclick="TrueOrFalse('${listItem}')" class="TrueOrFalseButton learnButton">TrueOrFalse</button>
-        <button onclick="WriteEx('${listItem}')" class="WriteExButton learnButton">WriteEx</button>
-        <button onclick="showRemoveConfirmation('${listItem}', event)" class="deleteButton learnButton">delete</button>
+        <button onclick="modify('${key}')" class="modifyButton learnButton">Modify</button>
+        <button onclick="learnCards('${key}')" class="learnButton learnButton">Learn Cards</button>
+        <button onclick="DropDown('${key}')" class="DropDownButton learnButton">DropDown</button>
+        <button onclick="MultipleChoice('${key}')" class="MultipleChoice learnButton">MultipleChoice</button>
+        <button onclick="DragAndDrop('${key}')" class="DragAndDropButton learnButton">Drag & Drop</button>
+        <button onclick="TrueOrFalse('${key}')" class="TrueOrFalseButton learnButton">TrueOrFalse</button>
+        <button onclick="WriteEx('${key}')" class="WriteExButton learnButton">WriteEx</button>
+        <button onclick="showRemoveConfirmation('${key}', event)" class="deleteButton learnButton">delete</button>
         </div>
         </div>`
-        )
+            )
+        }
+        // console.log(`${key}: ${value}`);
     }
 })
+
+currentDeleteDiv = document.querySelector(".OSQItem")
 
 function modify(listItem) {
     const modifyScreen = document.querySelector(".modifyScreen")
@@ -87,6 +96,7 @@ function modify(listItem) {
     const Separator = document.querySelector("#SeparatorInputID")
     // const setNewGroupInput = document.querySelector(".SetNewGroupInput")
     const AnswerGroup = document.querySelector(".Answer")
+    currentOSQNameForSubmit = listItem
 
     modifyScreen.style.display = "flex"
     document.querySelector(".blurDiv").style.display = "block"
@@ -123,13 +133,45 @@ function modify(listItem) {
 }
 
 function submit() {
+    const NameAlreadyExistsDiv = document.querySelector(".nameExistsWarning")
     const modifyScreen = document.querySelector(".modifyScreen")
     const textarea = document.querySelector("textarea")
     const OSQName = document.querySelector(".OSQNameInput")
     const Separator = document.querySelector("#SeparatorInputID")
+    const GroupCantBeEmpty = document.querySelector(".GroupCantBeEmpty")
     const arrayOfLines = textarea.value.split("\n")
     const SeparatorValue = Separator.value
     let groupName
+
+    // console.log(currentOSQNameForSubmit)
+    // console.log(OSQName.value)
+    // console.log(currentOSQNameForSubmit != OSQName.value)
+
+    if (
+        Object.keys({ ...localStorage }).includes(OSQName.value) &&
+        currentOSQNameForSubmit != OSQName.value
+    ) {
+        // console.log("That name already exists! Sorry")
+        NameAlreadyExistsDiv.style.display = "inline"
+        return 1
+    } else {
+        NameAlreadyExistsDiv.style.display = "none"
+    }
+    if (
+        document.querySelector(".SetNewGroupInput").value == "" &&
+        document.querySelector(".SetNewGroup").style.display != "none"
+    ) {
+        GroupCantBeEmpty.style.display = "inline"
+        return 1
+    } else {
+        GroupCantBeEmpty.style.display = "none"
+    }
+    if (textarea.value == "") {
+        document.querySelector(".EmptyTextArea").style.display = "inline"
+        return 1
+    } else {
+        document.querySelector(".EmptyTextArea").style.display = "none"
+    }
 
     if (
         modifyScreen.querySelector(".Answer").textContent.trim() ==
@@ -161,16 +203,21 @@ function submit() {
     OSQName.value = ""
     Separator.value = ""
     document.querySelector(".SetNewGroupInput").value = ""
+    // console.log(modifyScreen)
+    exit()
+    location.reload("true")
     // console.log("Submit: " + { ...localStorage })
-    modifyScreen.style.display = "none"
-    document.querySelector(".blurDiv").style.display = "none"
-    location.reload()
 }
 
 function exit() {
     document.querySelector(".removeConfirmation").style.display = "none"
     document.querySelector(".modifyScreen").style.display = "none"
     document.querySelector(".blurDiv").style.display = "none"
+
+    document.querySelectorAll(".Warning").forEach((el) => {
+        el.style.display = "none"
+    })
+
     // console.log(OpenAndCloseDivBoolean)
     if (OpenAndCloseDivBoolean) {
         let divChildren = Array.from(
@@ -213,7 +260,8 @@ function remove() {
     currentDeleteItem.remove()
     // console.log(currentDeleteItem.id)
     localStorage.removeItem(currentDeleteItem.id)
-    exit()
+    // exit()
+    location.reload("true")
 }
 
 function showRemoveConfirmation(listItem, event) {
